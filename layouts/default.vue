@@ -1,8 +1,9 @@
 <template>
   <div >
     <HeaderStatic />
-    <NuxtPage />
+    <NuxtPage class="default-main" />
     <FooterStatic />
+    <img class="default-line" src="~assets/img/ui/line.png" alt="">
     <slot />
   </div>
 </template>
@@ -13,6 +14,25 @@
 
 <style lang="scss">
 
+.default {
+
+  &-main {
+    margin-top: 103px;
+  }
+
+  &-line {
+    position: fixed;
+    top: 40%;
+    right: 50px;
+    width: 45px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,6 +87,7 @@ body {
   padding: 0px;
   font-family: 'Noto Sans TC', 'Noto Sans SC', 'Lato' ,sans-serif;
   background-color: white;
+  font-size: 14px;
   // font-family: 'GoudyOldStyle,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,PingFang TC,Hiragino Sans GB,Microsoft JhengHei,sans-serif!important';
 }
 
@@ -102,19 +123,21 @@ textarea {
   }
 }
 
-.default-image {
 
-}
-
-.hover-image {
-  display: none;
-}
 
 @media( max-width: 1023px ){
 
-  body {
+.default {
+
+  &-main {
+    margin-top: 103px;
+  }
+
+  &-line {
     
   }
+
+}
 
 }
 
