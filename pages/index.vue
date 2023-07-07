@@ -68,34 +68,36 @@
     </div>
 
     <div id="case" class="index-case">
-      <div class="index-case-row">
-        <div class="index-case-head">成功個案</div>
-        <div class="index-case-sub">瘦下來還能改善這些</div>
-      </div>
-      <div class="index-case-row2">
-        <div class="index-case-btn">三高</div>
-        <div class="index-case-btn">不孕症</div>
-        <div class="index-case-btn">心肌梗塞</div>
-        <div class="index-case-btn">衣服選擇障礙</div>
-        <div class="index-case-btn">改變身形</div>
-        <div class="index-case-btn2">更多</div>
-      </div>
-      <div class="index-case-row3">
-        <div>
-          <div class="index-case-title">手術一年，從127到84公斤</div>
-          <div class="index-case-text">
-            我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
-            腰圍從46變36（瘦了一大圈）<br>
-            走路輕盈地像要飛起來一樣<br><br>
-
-            很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
-
-            手術後三個月內是身體的#恢復期有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
-
-            重獲自信心，但別再問我這些問題「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
-          </div>
+      <div class="index-case-outer">
+        <div class="index-case-row">
+          <div class="index-case-head">成功個案</div>
+          <div class="index-case-sub">瘦下來還能改善這些</div>
         </div>
-        <img class="index-case-photo" src="~assets/img/doctor/01.png" alt="">
+        <div class="index-case-row2">
+          <div class="index-case-btn index-case-btn-select">三高</div>
+          <div class="index-case-btn">不孕症</div>
+          <div class="index-case-btn">心肌梗塞</div>
+          <div class="index-case-btn">衣服選擇障礙</div>
+          <div class="index-case-btn">改變身形</div>
+          <div class="index-case-btn2">更多</div>
+        </div>
+        <div class="index-case-row3">
+          <div>
+            <div class="index-case-title">手術一年，從127到84公斤</div>
+            <div class="index-case-text">
+              我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
+              腰圍從46變36（瘦了一大圈）<br>
+              走路輕盈地像要飛起來一樣<br><br>
+
+              很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
+
+              手術後三個月內是身體的#恢復期有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
+
+              重獲自信心，但別再問我這些問題「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
+            </div>
+          </div>
+          <img class="index-case-photo" src="~assets/img/doctor/01.png" alt="">
+        </div>
       </div>
     </div>
 
@@ -118,7 +120,7 @@
             <div class="index-service-text">不開刀的瘦身選擇</div>
             <div class="index-service-more">瞭解更多</div>
           </div>
-          <div class="index-service-box">
+          <div class="index-service-box index-service-box-last">
             <img class="index-service-img" src="~assets/img/ui/pin.png" alt="">
             <div class="index-service-title">內科治療</div>
             <div class="index-service-text">營養與藥物</div>
@@ -132,8 +134,10 @@
       <div class="index-contact-head">聯繫我們</div>
       <div class="index-contact-sub">請透過一下聯繫方式聯繫我們</div>
       <div class="index-contact-box">
-        <img class="index-contact-img" src="~assets/img/ui/phone2.png" alt="">
-        <div class="index-contact-num">07-559-6126</div>
+        <div class="index-contact-inner">
+          <img class="index-contact-img" src="~assets/img/ui/phone2.png" alt="">
+          <div class="index-contact-num">07-559-6126</div>
+        </div>
         <img class="index-contact-img2" src="~assets/img/ui/copy.png" alt="">
       </div>
       <div class="index-contact-box">
@@ -264,6 +268,7 @@ import { register } from 'swiper/element/bundle'
 
 
 
+
 </script>
 
 <style lang="scss" scoped>
@@ -271,9 +276,12 @@ import { register } from 'swiper/element/bundle'
 .index {
 
   &-main {
+    padding: 30px 50px 0px;
 
     &-row {
-
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &-left {
@@ -289,171 +297,382 @@ import { register } from 'swiper/element/bundle'
     }
 
     &-right {
-
+      margin-left: 54px;
     }
 
     &-text {
+      position: relative;
+      width: 363px;
+      font-size: 32px;
+      line-height: 1.6;
 
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 228px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
     }
 
     &-dot-row {
-
+      display: flex;
+      align-items: center;
+      margin-top: 38px;
     }
 
     &-dot {
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
+      border-radius: 100%;
+      background-color: rgb(220,220,220);
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-dot-dark {
-
+      background-color: rgb(172,172,172);
     }
 
   }
 
+  //team
+
   &-team {
+    margin-top: 100px;
 
     &-head {
+      position: relative;
+      font-size: 40px;
+      text-align: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 140px);
+        top: -10px;
+        width: 228px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
 
     }
 
     &-sub {
-
+      margin: 10px 0px 32px;
+      text-align: center;
+      color: #888;
     }
 
     &-row {
-
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
     }
 
     &-box {
-
+      width: 478px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 10px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #E8E8E8;
     }
 
     &-row2 {
-
+      text-align: center;
+      width: calc(100% - 168px);
     }
 
     &-name {
-
+      margin-top: 42px;
+      font-size: 24px;
     }
 
     &-word {
-
+      margin-top: 14px;
+      color: #888;
+      font-size: 12px;
     }
 
     &-more {
+      width: 228px;
+      margin: 70px auto 0px;
+      padding: 14px 0px;
+      border: 1px solid #772685;
+      color: #772685;
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-photo {
-
+      width: 168px;
     }
     
   }
 
+  //case
+
   &-case {
+    display: flex;
+    justify-content: center;
+    margin: 100px 50px 0px;
+    padding: 64px 0px 107px;
+    background-color: #FBF9FC;
+    border-radius: 8px;
+
+    &-outer {
+      width: 80%
+    }
 
     &-row {
-
+      display: flex;
     }
 
     &-head {
+      position: relative;
+      font-size: 40px;
+      line-height: 1.6;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
 
     }
 
     &-sub {
-
+      margin: 16px 0px 0px 38px;
+      color: #3F3F3F;
     }
 
     &-row2 {
-
+      display: flex;
+      align-items: center;
+      margin-top: 24px;
     }
 
     &-btn {
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      margin-right: 27px;
+      border-radius: 100px;
+      border: 1px solid #772685;
+      color: #772685;
+      background: #FFF;
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-btn-select {
+      background-color: #772685;
+      color: white;
     }
 
     &-btn2 {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid #772685;
+      border-radius: 100%;
+      color: #772685;
+      background: #FFF;
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row3 {
-
+      margin-top: 58px;
+      display: flex;
+      justify-content: space-between;
     }
 
     &-title {
-
+      font-size: 18px;
     }
 
     &-text {
-
+      margin-top: 24px;
+      width: calc(100% - 70px);
+      color: #5C5757;
+      line-height: 1.4;
     }
 
     &-photo {
-
+      width: 288px;
+      height: 100%;
     }
     
   }
 
+  //service
+
   &-service {
+    margin: 128px 0px 0px;
+    padding: 0px 100px;
 
     &-row {
-
+      display: flex;
+      justify-content: center;
     }
 
     &-left {
-
+      margin: 80px 98px 0px 0px;
     }
 
     &-head {
+      position: relative;
+      font-size: 40px;
+      line-height: 1.6;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
 
     }
 
     &-sub {
-
+      margin-top: 8px;
+      color: #888;
     }
 
     &-right {
-
+      display: flex;
+      border-radius: 8px;
+      border: 2px solid #E8E8E8;
     }
 
     &-box {
+      padding: 21px 18px 27px;
+      border-right: 2px solid #E8E8E8;
+    }
 
+    &-box-last {
+      border-right: 0px;
     }
 
     &-img {
-
+      width: 123px;
     }
 
     &-title {
-
+      margin-top: 41px;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     &-text {
-
+      margin-top: 8px;
+      color: #888;
+      font-size: 12px;
     }
 
     &-more {
+      margin-top: 90px;
+      width: 14vw;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #772685;
+      color: #772685;
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
     
   }
 
+  //caontact
+
   &-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0px 0px;
+    padding: 108px 0px 80px;
+    background: #FBFBFB;
+
 
     &-head {
+      position: relative;
+      font-size: 40px;
+      line-height: 1.6;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
 
     }
 
     &-sub {
-
+      margin-top: 8px;
+      color: #888;
     }
 
     &-box {
+      display: flex;
+      justify-content: space-between;
+      width: 400px;
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid #E8E8E8;
+      background: #FFF;
+    }
 
+    &-inner {
+      display: flex;
+      align-items: center;
     }
 
     &-img {
-
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
     }
 
     &-num {
@@ -461,14 +680,25 @@ import { register } from 'swiper/element/bundle'
     }
 
     &-img2 {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
     
   }
 
+  //location
+
   &-location {
-    
+    width: 80%;
+    margin: auto;
   }
+
+  //popup
 
   &-popup {
 
@@ -506,6 +736,8 @@ import { register } from 'swiper/element/bundle'
     
   }
 
+  //popup2
+
   &-popup2 {
 
     &-outer {
@@ -541,6 +773,8 @@ import { register } from 'swiper/element/bundle'
     }
     
   }
+
+  //popup3
 
   &-popup3 {
 

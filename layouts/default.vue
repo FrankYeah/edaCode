@@ -52,7 +52,6 @@ time, mark, audio, video {
 	border: 0;
   letter-spacing: 1px;
 	vertical-align: baseline;
-  line-height: 1.7;
   letter-spacing: 1.7px;
 }
 
