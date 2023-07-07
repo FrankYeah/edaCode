@@ -31,7 +31,7 @@
           <div class="index-team-row2">
             <div class="index-team-name">建翰 醫師</div>
             <div class="index-team-word">「你若有決心，我就有方法」</div>
-            <div class="index-team-more">瞭解更多</div>
+            <div @click="popup1('建翰')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/01.png" alt="">
         </div>
@@ -40,7 +40,7 @@
           <div class="index-team-row2">
             <div class="index-team-name">忠延 醫師</div>
             <div class="index-team-word">「給自己一次機會改變！」</div>
-            <div class="index-team-more">瞭解更多</div>
+            <div @click="popup1('忠延')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/02.png" alt="">
         </div>
@@ -51,7 +51,7 @@
           <div class="index-team-row2">
             <div class="index-team-name">昱彰 醫師</div>
             <div class="index-team-word">「選擇不一樣的人生與人『身』」</div>
-            <div class="index-team-more">瞭解更多</div>
+            <div @click="popup1('昱彰')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/03.png" alt="">
         </div>
@@ -60,7 +60,7 @@
           <div class="index-team-row2">
             <div class="index-team-name">暐霖 醫師</div>
             <div class="index-team-word">「真心想，就會事成」</div>
-            <div class="index-team-more">瞭解更多</div>
+            <div @click="popup1('暐霖')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/04.png" alt="">
         </div>
@@ -74,12 +74,12 @@
           <div class="index-case-sub">瘦下來還能改善這些</div>
         </div>
         <div class="index-case-row2">
-          <div class="index-case-btn index-case-btn-select">三高</div>
-          <div class="index-case-btn">不孕症</div>
-          <div class="index-case-btn">心肌梗塞</div>
-          <div class="index-case-btn">衣服選擇障礙</div>
-          <div class="index-case-btn">改變身形</div>
-          <div class="index-case-btn2">更多</div>
+          <div @click="ill('三高')" class="index-case-btn index-case-btn-select">三高</div>
+          <div @click="ill('不孕症')" class="index-case-btn">不孕症</div>
+          <div @click="ill('心肌梗塞')" class="index-case-btn">心肌梗塞</div>
+          <div @click="ill('衣服選擇障礙')" class="index-case-btn">衣服選擇障礙</div>
+          <div @click="ill('改變身形')" class="index-case-btn">改變身形</div>
+          <div @click="popup2()" class="index-case-btn2">更多</div>
         </div>
         <div class="index-case-row3">
           <div>
@@ -112,19 +112,19 @@
             <img class="index-service-img" src="~assets/img/ui/knife.png" alt="">
             <div class="index-service-title">減重手術</div>
             <div class="index-service-text">減重手術介紹</div>
-            <div class="index-service-more">瞭解更多</div>
+            <div @click="popup3('減重手術')" class="index-service-more">瞭解更多</div>
           </div>
           <div class="index-service-box">
             <img class="index-service-img" src="~assets/img/ui/heart.png" alt="">
             <div class="index-service-title">不開刀</div>
             <div class="index-service-text">不開刀的瘦身選擇</div>
-            <div class="index-service-more">瞭解更多</div>
+            <div @click="popup3('不開刀')" class="index-service-more">瞭解更多</div>
           </div>
           <div class="index-service-box index-service-box-last">
             <img class="index-service-img" src="~assets/img/ui/pin.png" alt="">
             <div class="index-service-title">內科治療</div>
             <div class="index-service-text">營養與藥物</div>
-            <div class="index-service-more">瞭解更多</div>
+            <div @click="popup3('內科治療')" class="index-service-more">瞭解更多</div>
           </div>
         </div>
       </div>
@@ -153,11 +153,9 @@
     </div>
 
     <!-- popup -->
-    <div class="index-popup">
+    <div v-if="isPopup1" class="index-popup">
       <div class="index-popup-outer">
-        <div class="index-popup-close-box">
-          <img class="index-popup-close" src="~assets/img/ui/close.png" alt="">
-        </div>
+        <img @click="isPopup1 = false" class="index-popup-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup-row">
           <img class="index-popup-img" src="~assets/img/des/D01.png" alt="">
           <div class="index-popup-right">
@@ -185,14 +183,12 @@
       </div>
     </div>
 
-    <div class="index-popup2">
+    <div v-if="isPopup2" class="index-popup2">
       <div class="index-popup2-outer">
-        <div class="index-popup2-close-box">
-          <img class="index-popup2-close" src="~assets/img/ui/close.png" alt="">
-        </div>
+        <img @click="isPopup2 = false" class="index-popup2-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup2-row">
           <div class="index-popup2-left">
-            <div class="index-popup2-item">三高</div>
+            <div class="index-popup2-item index-popup2-item-select">三高</div>
             <div class="index-popup2-item">不孕症</div>
             <div class="index-popup2-item">心肌梗塞</div>
             <div class="index-popup2-item">衣服選擇障礙</div>
@@ -223,13 +219,11 @@
       </div>
     </div>
 
-    <div class="index-popup3">
+    <div v-if="isPopup3" class="index-popup3">
       <div class="index-popup3-outer">
-        <div class="index-popup3-close-box">
-          <img class="index-popup3-close" src="~assets/img/ui/close.png" alt="">
-        </div>
+        <img @click="isPopup3 = false" class="index-popup3-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup3-row">
-          <img class="index-popup2-icon" src="~assets/img/ui/knife.png" alt="">
+          <img class="index-popup3-icon" src="~assets/img/ui/knife.png" alt="">
           <div>
             <div class="index-popup3-head">減重手術</div>
             <div class="index-popup3-sub">減重手術介紹</div>
@@ -264,9 +258,26 @@
 </template>
 
 <script lang="ts" setup>
-import { register } from 'swiper/element/bundle'
 
+const isPopup1 = ref(false)
+const isPopup2 = ref(false)
+const isPopup3 = ref(false)
 
+function popup1() {
+  isPopup1.value = true
+}
+
+function ill() {
+
+}
+
+function popup2() {
+  isPopup2.value = true
+}
+
+function popup3() {
+  isPopup3.value = true  
+}
 
 
 </script>
@@ -701,21 +712,45 @@ import { register } from 'swiper/element/bundle'
   //popup
 
   &-popup {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
+    background-color: rgba(black, 0.5);
+    z-index: 2;
 
     &-outer {
-
+      position: relative;
+      width: 90%;
+      margin: auto;
+      padding: 36px 20px 40px;
+      background: white;
+      border-radius: 8px;
     }
 
     &-close {
-      
+      position: absolute;
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row {
-      
+      display: flex;
     }
 
     &-img {
-      
+      width: 50%;
+      height: 100%;
+      margin-right: 50px;
     }
 
     &-right {
@@ -723,15 +758,20 @@ import { register } from 'swiper/element/bundle'
     }
 
     &-head {
-      
+      line-height: 1.2;
+      color: #772685;
+      font-size: 24px;
+      font-weight: 700;
     }
 
     &-title {
-      
+      margin: 24px 0px 8px;
+      font-weight: 700;
     }
 
     &-text {
-      
+      line-height: 1.5;
+      color: #5C5757;
     }
     
   }
@@ -739,37 +779,84 @@ import { register } from 'swiper/element/bundle'
   //popup2
 
   &-popup2 {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
+    background-color: rgba(black, 0.5);
+    z-index: 2;
 
     &-outer {
+      position: relative;
+      width: 90%;
+      margin: auto;
+      padding: 36px 20px 40px;
+      background: white;
+      border-radius: 8px;
+    }
 
+    &-close {
+      position: absolute;
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row {
-      
+      display: flex;
+      justify-content: space-between;
     }
 
     &-left {
-      
+      border: 1px solid #C8B4F1;
+      border-bottom: 0px solid #C8B4F1;
     }
 
     &-item {
-      
+      width: 208px;
+      padding: 11px 0px;
+      border-bottom: 1px solid #C8B4F1;
+      text-align: center;
+      color: #9F7AA6;
+      line-height: 1.5;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    
+    &-item-select {
+      color: white;
+      background-color: #772685;
     }
 
     &-center {
-      
+      margin: 0px 64px;
     }
 
     &-head {
-      
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
     &-text {
-      
+      line-height: 1.5;
+      color: #5C5757;
     }
 
     &-photo {
-      
+      width: 288px;
+      height: 100%;
     }
     
   }
@@ -777,57 +864,93 @@ import { register } from 'swiper/element/bundle'
   //popup3
 
   &-popup3 {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
+    background-color: rgba(black, 0.5);
+    z-index: 2;
 
     &-outer {
-      
+      position: relative;
+      width: 90%;
+      margin: auto;
+      padding: 36px 80px 56px;
+      background: white;
+      border-radius: 8px;
     }
 
     &-close {
-      
+      position: absolute;
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row {
-      
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &-icon {
-      
+      width: 44px;
+      margin-right: 16px;
     }
 
     &-head {
-      
+      font-size: 18px;
+      font-weight: 700;
     }
 
     &-sub {
-      
+      margin-top: 4px;
+      color: #888;
+      font-size: 12px;
     }
 
     &-row2 {
-      
+      margin-top: 38px;
+      display: flex;
+      justify-content: space-between;
     }
 
     &-left {
-      
+      width: 46%;
     }
 
     &-title {
-      
+      font-size: 24px;
+      font-weight: 700;
     }
 
     &-hint {
-      
+      margin-top: 4px;
+      color: #772685;
     }
 
     &-text1 {
-      
+      margin-top: 24px;
+      font-weight: 700;
     }
 
     &-text2 {
-      
+      color: #5C5757;
+      line-height: 1.5;
     }
 
     &-right {
-      
+      width: 46%;
+      margin-top: 8px;
+      color: #5C5757;
     }
     
   }
