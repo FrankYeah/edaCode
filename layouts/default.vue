@@ -133,7 +133,9 @@ textarea {
   }
 
   &-line {
-    
+    top: 40%;
+    right: 50px;
+    width: 45px;
   }
 
 }

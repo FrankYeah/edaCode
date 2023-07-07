@@ -57,17 +57,18 @@
   }  
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1023px){
 
 .footer {
-  
+  padding: 24px 0px;
 
   &-row {
     
   }
 
   &-outer {
-    
+    width: 40px;
+    margin: 0px 12px;
   }
 
   &-icon {
@@ -75,7 +76,7 @@
   }
 
   &-copyright {
-    
+    margin-top: 12px;
   }  
 }
 

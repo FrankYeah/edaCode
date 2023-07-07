@@ -33,6 +33,14 @@
     </div>
 
     <!-- 手機版 -->
+    <div class="header-box header-desktop">
+      <!-- <img class="" src="~assets/img" alt=""> -->
+      <nuxt-link to="/">
+        <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
+      </nuxt-link>
+      <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
+    </div>
+
   </div>
 </template>
 
@@ -116,16 +124,18 @@ export default {
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1023px) {
 
 .header {
+  height: 103px;
+  padding: 32px 74px;
 
   &-desktop {
-
+    display: none;
   }
 
   &-rwd {
-    
+    display: block;
   }
 
   &-box {
@@ -133,11 +143,12 @@ export default {
   }
 
   &-logo {
-    
+    height: 40px;
   }
 
   &-group {
     
+
   }
 
   &-row {
@@ -145,7 +156,7 @@ export default {
   }
 
   &-item {
-    
+    margin-left: 40px;
   }
 
   &-text {
@@ -153,7 +164,8 @@ export default {
   }
 
   &-en {
-    
+    margin-top: 2px;
+    font-size: 10px;
   }
 
 }

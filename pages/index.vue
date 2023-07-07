@@ -79,7 +79,7 @@
           <div @click="ill('心肌梗塞')" class="index-case-btn">心肌梗塞</div>
           <div @click="ill('衣服選擇障礙')" class="index-case-btn">衣服選擇障礙</div>
           <div @click="ill('改變身形')" class="index-case-btn">改變身形</div>
-          <div @click="popup2()" class="index-case-btn2">更多</div>
+          <div @click="popup2('close')" class="index-case-btn2">更多</div>
         </div>
         <div class="index-case-row3">
           <div>
@@ -263,19 +263,19 @@ const isPopup1 = ref(false)
 const isPopup2 = ref(false)
 const isPopup3 = ref(false)
 
-function popup1() {
+function popup1(item:any) {
   isPopup1.value = true
 }
 
-function ill() {
+function ill(item:any) {
 
 }
 
-function popup2() {
+function popup2(item:any) {
   isPopup2.value = true
 }
 
-function popup3() {
+function popup3(item:any) {
   isPopup3.value = true  
 }
 
@@ -957,14 +957,15 @@ function popup3() {
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1023px){
 
 .index {
 
   &-main {
+    padding: 30px 50px 0px;
 
     &-row {
-
+      
     }
 
     &-left {
@@ -980,171 +981,278 @@ function popup3() {
     }
 
     &-right {
-
+      margin-left: 54px;
     }
 
     &-text {
+      width: 363px;
+      font-size: 32px;
+      line-height: 1.6;
 
+      &::before {
+        left: -10px;
+        top: -10px;
+        width: 228px;
+        height: 40px;
+      }
     }
 
     &-dot-row {
-
+      margin-top: 38px;
     }
 
     &-dot {
-
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
     }
 
     &-dot-dark {
-
+      
     }
 
   }
 
+  //team
+
   &-team {
+    margin-top: 100px;
 
     &-head {
+      font-size: 40px;
+
+      &::before {
+        left: calc(50% - 140px);
+        top: -10px;
+        width: 228px;
+        height: 40px;
+      }
 
     }
 
     &-sub {
-
+      margin: 10px 0px 32px;
     }
 
     &-row {
-
+      margin-top: 20px;
     }
 
     &-box {
-
+      margin: 0px 10px;
+      padding: 8px;
+      border-radius: 8px;
     }
 
     &-row2 {
-
+      width: calc(100% - 168px);
     }
 
     &-name {
-
+      margin-top: 42px;
+      font-size: 24px;
     }
 
     &-word {
-
+      margin-top: 14px;
+      font-size: 12px;
     }
 
     &-more {
-
+      width: 228px;
+      margin: 70px auto 0px;
+      padding: 14px 0px;
     }
 
     &-photo {
-
+      width: 168px;
     }
     
   }
 
+  //case
+
   &-case {
+    margin: 100px 50px 0px;
+    padding: 64px 0px 107px;
+    border-radius: 8px;
+
+    &-outer {
+      width: 80%
+    }
 
     &-row {
-
+      
     }
 
     &-head {
+      font-size: 40px;
+
+      &::before {
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+      }
 
     }
 
     &-sub {
-
+      margin: 16px 0px 0px 38px;
     }
 
     &-row2 {
-
+      margin-top: 24px;
     }
 
     &-btn {
+      width: 150px;
+      height: 45px;
+      line-height: 45px;
+      margin-right: 27px;
+      border-radius: 100px;
+    }
 
+    &-btn-select {
+      
     }
 
     &-btn2 {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
 
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row3 {
-
+      margin-top: 58px;
     }
 
     &-title {
-
+      font-size: 18px;
     }
 
     &-text {
-
+      margin-top: 24px;
+      width: calc(100% - 70px);
     }
 
     &-photo {
-
+      width: 288px;
+      height: 100%;
     }
     
   }
 
+  //service
+
   &-service {
+    margin: 128px 0px 0px;
+    padding: 0px 100px;
 
     &-row {
-
+      
     }
 
     &-left {
-
+      margin: 80px 98px 0px 0px;
     }
 
     &-head {
+      font-size: 40px;
+      line-height: 1.6;
+
+      &::before {
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+      }
 
     }
 
     &-sub {
-
+      margin-top: 8px;
     }
 
     &-right {
-
+      border-radius: 8px;
     }
 
     &-box {
+      padding: 21px 18px 27px;
+    }
 
+    &-box-last {
+      
     }
 
     &-img {
-
+      width: 123px;
     }
 
     &-title {
-
+      margin-top: 41px;
+      font-size: 18px;
     }
 
     &-text {
-
+      margin-top: 8px;
+      font-size: 12px;
     }
 
     &-more {
-
+      margin-top: 90px;
+      width: 14vw;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 8px;
     }
     
   }
 
+  //caontact
+
   &-contact {
+    margin: 100px 0px 0px;
+    padding: 108px 0px 80px;
+
 
     &-head {
+      font-size: 40px;
+      line-height: 1.6;
+
+      &::before {
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+      }
 
     }
 
     &-sub {
-
+      margin-top: 8px;
     }
 
     &-box {
+      width: 400px;
+      margin-top: 18px;
+      padding: 14px;
+    }
 
+    &-inner {
+      
     }
 
     &-img {
-
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
     }
 
     &-num {
@@ -1152,23 +1260,36 @@ function popup3() {
     }
 
     &-img2 {
-
+      width: 24px;
+      height: 24px;
     }
     
   }
 
+  //location
+
   &-location {
-    
+    width: 80%;
   }
 
+  //popup
+
   &-popup {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
 
     &-outer {
-
+      width: 90%;
+      padding: 36px 20px 40px;
+      border-radius: 8px;
     }
 
     &-close {
-      
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
     }
 
     &-row {
@@ -1176,7 +1297,8 @@ function popup3() {
     }
 
     &-img {
-      
+      width: 50%;
+      margin-right: 50px;
     }
 
     &-right {
@@ -1184,23 +1306,37 @@ function popup3() {
     }
 
     &-head {
-      
+      font-size: 24px;
     }
 
     &-title {
-      
+      margin: 24px 0px 8px;
     }
 
     &-text {
-      
+      line-height: 1.5;
     }
     
   }
 
+  //popup2
+
   &-popup2 {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
 
     &-outer {
+      width: 90%;
+      padding: 36px 20px 40px;
+      border-radius: 8px;
+    }
 
+    &-close {
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
     }
 
     &-row {
@@ -1212,35 +1348,52 @@ function popup3() {
     }
 
     &-item {
+      width: 208px;
+      padding: 11px 0px;
+    }
+    
+    &-item-select {
       
     }
 
     &-center {
-      
+      margin: 0px 64px;
     }
 
     &-head {
-      
+      font-size: 18px;
+      margin-bottom: 24px;
     }
 
     &-text {
-      
+      line-height: 1.5;
     }
 
     &-photo {
-      
+      width: 288px;
+      height: 100%;
     }
     
   }
 
+  //popup3
+
   &-popup3 {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
 
     &-outer {
-      
+      width: 90%;
+      padding: 36px 80px 56px;
+      border-radius: 8px;
     }
 
     &-close {
-      
+      right: -14px;
+      top: -14px;
+      width: 40px;
+      height: 40px;
     }
 
     &-row {
@@ -1248,35 +1401,37 @@ function popup3() {
     }
 
     &-icon {
-      
+      width: 44px;
+      margin-right: 16px;
     }
 
     &-head {
-      
+      font-size: 18px;
     }
 
     &-sub {
-      
+      margin-top: 4px;
+      font-size: 12px;
     }
 
     &-row2 {
-      
+      margin-top: 38px;
     }
 
     &-left {
-      
+      width: 46%;
     }
 
     &-title {
-      
+      font-size: 24px;
     }
 
     &-hint {
-      
+      margin-top: 4px;
     }
 
     &-text1 {
-      
+      margin-top: 24px;
     }
 
     &-text2 {
@@ -1284,7 +1439,8 @@ function popup3() {
     }
 
     &-right {
-      
+      width: 46%;
+      margin-top: 8px;
     }
     
   }
