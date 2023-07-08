@@ -25,6 +25,7 @@
     top: 40%;
     right: 50px;
     width: 45px;
+    z-index: 1;
     cursor: pointer;
 
     &:hover {
