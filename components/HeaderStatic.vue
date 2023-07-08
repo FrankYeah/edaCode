@@ -108,14 +108,14 @@ export default {
     display: block;
   }
 
-  &-rwd {
-    display: none;
-  }
-
   &-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &-rwd {
+    display: none;
   }
 
   &-logo {

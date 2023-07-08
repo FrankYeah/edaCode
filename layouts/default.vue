@@ -130,13 +130,13 @@ textarea {
 .default {
 
   &-main {
-    margin-top: 103px;
+    margin-top: 80px;
   }
 
   &-line {
     top: 40%;
-    right: 50px;
-    width: 45px;
+    right: 36px;
+    width: 36px;
   }
 
 }

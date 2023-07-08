@@ -25,7 +25,7 @@
     <div id="team" class="index-team">
       <div class="index-team-head">專業醫療團隊</div>
       <div class="index-team-sub">最專業的醫療團隊</div>
-      <div class="index-team-row">
+      <div class="index-team-row index-team-desktop">
         <!-- 1 -->
         <div class="index-team-box">
           <div class="index-team-row2">
@@ -45,7 +45,7 @@
           <img class="index-team-photo" src="~assets/img/doctor/02.png" alt="">
         </div>
       </div>
-      <div class="index-team-row">
+      <div class="index-team-row index-team-desktop">
         <!-- 3 -->
         <div class="index-team-box">
           <div class="index-team-row2">
@@ -65,6 +65,56 @@
           <img class="index-team-photo" src="~assets/img/doctor/04.png" alt="">
         </div>
       </div>
+
+      <div class="index-team-row index-team-rwd">
+        <!-- 1 -->
+        <div class="index-team-box">
+          <div class="index-team-row2">
+            <img class="index-team-photo" src="~assets/img/doctor/001.png" alt="">
+            <div>
+              <div class="index-team-name">建翰 醫師</div>
+              <div class="index-team-word">「你若有決心，我就有方法」</div>
+            </div>
+          </div>
+          <div @click="popup1('建翰')" class="index-team-more">瞭解更多</div>
+        </div>
+        <!-- 2 -->
+        <div class="index-team-box">
+          <div class="index-team-row2">
+            <img class="index-team-photo" src="~assets/img/doctor/002.png" alt="">
+            <div>
+              <div class="index-team-name">忠延 醫師</div>
+              <div class="index-team-word">「你若有決心，我就有方法」</div>
+            </div>
+          </div>
+          <div @click="popup1('忠延')" class="index-team-more">瞭解更多</div>
+        </div>
+      </div>
+      <div class="index-team-row index-team-rwd">
+        <!-- 3 -->
+        <div class="index-team-box">
+          <div class="index-team-row2">
+            <img class="index-team-photo" src="~assets/img/doctor/003.png" alt="">
+            <div>
+              <div class="index-team-name">昱彰 醫師</div>
+              <div class="index-team-word">「你若有決心，我就有方法」</div>
+            </div>
+          </div>
+          <div @click="popup1('昱彰')" class="index-team-more">瞭解更多</div>
+        </div>
+        <!-- 4 -->
+        <div class="index-team-box">
+          <div class="index-team-row2">
+            <img class="index-team-photo" src="~assets/img/doctor/004.png" alt="">
+            <div>
+              <div class="index-team-name">暐霖 醫師</div>
+              <div class="index-team-word">「你若有決心，我就有方法」</div>
+            </div>
+          </div>
+          <div @click="popup1('暐霖')" class="index-team-more">瞭解更多</div>
+        </div>
+      </div>
+
     </div>
 
     <div id="case" class="index-case">
@@ -358,6 +408,14 @@ function popup3(item:any) {
 
   &-team {
     margin-top: 100px;
+
+    &-desktop {
+      display: flex !important;
+    }
+
+    &-rwd {
+      display: none !important;
+    }
 
     &-head {
       position: relative;
@@ -962,10 +1020,10 @@ function popup3(item:any) {
 .index {
 
   &-main {
-    padding: 30px 50px 0px;
+    padding: 0px 0px 0px;
 
     &-row {
-      
+      flex-direction: column;
     }
 
     &-left {
@@ -981,30 +1039,30 @@ function popup3(item:any) {
     }
 
     &-right {
-      margin-left: 54px;
+      margin-left: 0px;
     }
 
     &-text {
-      width: 363px;
-      font-size: 32px;
-      line-height: 1.6;
+      width: 258px;
+      margin-top: 50px;
+      font-size: 20px;
+      text-align: center;
 
       &::before {
-        left: -10px;
+        left: 70px;
         top: -10px;
-        width: 228px;
-        height: 40px;
+        width: 133px;
+        height: 34px;
       }
     }
 
     &-dot-row {
-      margin-top: 38px;
+      justify-content: center;
+      margin-top: 16px;
     }
 
     &-dot {
-      width: 8px;
-      height: 8px;
-      margin-right: 6px;
+      
     }
 
     &-dot-dark {
@@ -1016,36 +1074,50 @@ function popup3(item:any) {
   //team
 
   &-team {
-    margin-top: 100px;
+    margin-top: 110px;
+
+    &-desktop {
+      display: none !important;
+    }
+
+    &-rwd {
+      display: block !important;
+    }
 
     &-head {
-      font-size: 40px;
+      font-size: 20px;
 
       &::before {
-        left: calc(50% - 140px);
+        left: calc(50% - 66px);
         top: -10px;
-        width: 228px;
-        height: 40px;
+        width: 133px;
+        height: 27px;
       }
 
     }
 
     &-sub {
-      margin: 10px 0px 32px;
+      margin: 8px 0px 30px;
     }
 
     &-row {
-      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0px;
     }
 
     &-box {
-      margin: 0px 10px;
-      padding: 8px;
-      border-radius: 8px;
+      flex-direction: column;
+      width: calc(100% - 48px);
+      margin: 24px 24px 0px;
+      padding: 20px;
     }
 
     &-row2 {
-      width: calc(100% - 168px);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &-name {
@@ -1059,13 +1131,13 @@ function popup3(item:any) {
     }
 
     &-more {
-      width: 228px;
-      margin: 70px auto 0px;
-      padding: 14px 0px;
+      width: 100%;
+      margin: 30px auto 0px;
+      text-align: center;
     }
 
     &-photo {
-      width: 168px;
+      width: 80px;
     }
     
   }
