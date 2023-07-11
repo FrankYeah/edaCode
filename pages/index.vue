@@ -5,18 +5,36 @@
         <div class="index-main-left">
           <div class="index-main-box">
             <!-- vif -->
-            <img class="index-main-img" src="~assets/img/banner/b02.png" alt="">
+            <img v-if="currentRotate == 1" class="index-main-img" src="~assets/img/banner/b01.png" alt="">
+            <img v-if="currentRotate == 2" class="index-main-img" src="~assets/img/banner/b02.png" alt="">
+            <img v-if="currentRotate == 3" class="index-main-img" src="~assets/img/banner/b03.png" alt="">
+            <img v-if="currentRotate == 4" class="index-main-img" src="~assets/img/banner/b04.png" alt="">
+            <img v-if="currentRotate == 5" class="index-main-img" src="~assets/img/banner/b05.png" alt="">
           </div>
         </div>
         <div class="index-main-right">
-          <div class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮</div>
+          <div v-if="currentRotate == 1" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮1</div>
+          <div v-if="currentRotate == 2" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮2</div>
+          <div v-if="currentRotate == 3" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮3</div>
+          <div v-if="currentRotate == 4" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮4</div>
+          <div v-if="currentRotate == 5" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮5</div>
           <div class="index-main-dot-row">
             <!-- class if -->
-            <div class="index-main-dot index-main-dot-dark"></div>
-            <div class="index-main-dot"></div>
-            <div class="index-main-dot"></div>
-            <div class="index-main-dot"></div>
-            <div class="index-main-dot"></div>
+            <div :class="['index-main-dot',
+              {'index-main-dot-dark': currentRotate == 1}]"
+            ></div>
+            <div :class="['index-main-dot',
+              {'index-main-dot-dark': currentRotate == 2}]"
+            ></div>
+            <div :class="['index-main-dot',
+              {'index-main-dot-dark': currentRotate == 3}]"
+            ></div>
+            <div :class="['index-main-dot',
+              {'index-main-dot-dark': currentRotate == 4}]"
+            ></div>
+            <div :class="['index-main-dot',
+              {'index-main-dot-dark': currentRotate == 5}]"
+            ></div>
           </div>
         </div>
       </div>
@@ -124,35 +142,41 @@
           <div class="index-case-sub">瘦下來還能改善這些</div>
         </div>
         <div class="index-case-row2">
-          <div @click="ill('三高')" class="index-case-btn index-case-btn-select">三高</div>
-          <div @click="ill('不孕症')" class="index-case-btn">不孕症</div>
-          <div @click="ill('心肌梗塞')" class="index-case-btn">心肌梗塞</div>
-          <div @click="ill('衣服選擇障礙')" class="index-case-btn">衣服選擇障礙</div>
-          <div @click="ill('改變身形')" class="index-case-btn">改變身形</div>
-          <div @click="ill('肝指數異常')" class="index-case-btn index-case-rwd">肝指數異常</div>
-          <div @click="ill('容貌焦慮')" class="index-case-btn index-case-rwd">容貌焦慮</div>
-          <div @click="ill('缺乏自信')" class="index-case-btn index-case-rwd">缺乏自信</div>
-          <div @click="ill('高血壓＆呼吸中止')" class="index-case-btn index-case-rwd">高血壓＆呼吸中止</div>
-          <div @click="ill('高血壓、自體免疫系統疾病、睡覺打鼾')" class="index-case-btn index-case-btn3 index-case-rwd">高血壓、自體免疫系統疾病、睡覺打鼾</div>
-          <div @click="ill('關節疼痛與壓迫')" class="index-case-btn index-case-rwd">關節疼痛與壓迫</div>
+          <div @click="ill('三高')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '三高'}]"
+          >三高</div>
+          <div @click="ill('不孕症')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '不孕症'}]">不孕症</div>
+          <div @click="ill('心肌梗塞')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '心肌梗塞'}]">心肌梗塞</div>
+          <div @click="ill('衣服選擇障礙')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '衣服選擇障礙'}]">衣服選擇障礙</div>
+          <div @click="ill('改變身形')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '改變身形'}]">改變身形</div>
+
+          <div @click="ill('肝指數異常')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '肝指數異常'}]">肝指數異常</div>
+          <div @click="ill('容貌焦慮')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '容貌焦慮'}]">容貌焦慮</div>
+          <div @click="ill('缺乏自信')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '缺乏自信'}]">缺乏自信</div>
+          <div @click="ill('高血壓＆呼吸中止')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '高血壓＆呼吸中止'}]">高血壓＆呼吸中止</div>
+          <div @click="ill('高血壓、自體免疫系統疾病、睡覺打鼾')"
+           :class="['index-case-btn index-case-btn3 index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '高血壓、自體免疫系統疾病、睡覺打鼾'}]"
+           >高血壓、自體免疫系統疾病、睡覺打鼾</div>
+          <div @click="ill('關節疼痛與壓迫')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '關節疼痛與壓迫'}]">關節疼痛與壓迫</div>
           <div @click="popup2('close')" class="index-case-btn2">更多</div>
         </div>
         <div class="index-case-row3">
           <div>
-            <div class="index-case-title">手術一年，從127到84公斤</div>
-            <div class="index-case-text">
-              我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
-              腰圍從46變36（瘦了一大圈）<br>
-              走路輕盈地像要飛起來一樣<br><br>
-
-              很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
-
-              手術後三個月內是身體的#恢復期有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
-
-              重獲自信心，但別再問我這些問題「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
-            </div>
+            <div class="index-case-title">{{ currentCase.title }}</div>
+            <div class="index-case-text" v-html="currentCase.text"></div>
           </div>
-          <img class="index-case-photo" src="~assets/img/doctor/01.png" alt="">
+          <img v-if="currentCase.name == '三高'" class="index-case-photo" src="~assets/img/doctor/01.png" alt="">
+          <img v-else class="index-case-photo" src="~assets/img/doctor/02.png" alt="">
         </div>
       </div>
     </div>
@@ -189,20 +213,20 @@
     <div id="contact" class="index-contact">
       <div class="index-contact-head">聯繫我們</div>
       <div class="index-contact-sub">請透過一下聯繫方式聯繫我們</div>
-      <div class="index-contact-box">
+      <a href="tel:+886-917218567" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/phone2.png" alt="">
           <div class="index-contact-num">07-559-6126</div>
         </div>
         <img class="index-contact-img2" src="~assets/img/ui/copy.png" alt="">
-      </div>
-      <div class="index-contact-box">
+      </a>
+      <a href="line://ti/p/frank810729" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/line.png" alt="">
           <div class="index-contact-num">LineID</div>
         </div>
         <img class="index-contact-img2" src="~assets/img/ui/leave.png" alt="">
-      </div>
+      </a>
     </div>
 
     <div id="location" class="index-location">
@@ -246,31 +270,43 @@
         <img @click="isPopup2 = false" class="index-popup2-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup2-row">
           <div class="index-popup2-left">
-            <div class="index-popup2-item index-popup2-item-select">三高</div>
-            <div class="index-popup2-item">不孕症</div>
-            <div class="index-popup2-item">心肌梗塞</div>
-            <div class="index-popup2-item">衣服選擇障礙</div>
-            <div class="index-popup2-item">改變身形</div>
-            <div class="index-popup2-item">肝指數異常</div>
-            <div class="index-popup2-item">容貌焦慮</div>
-            <div class="index-popup2-item">缺乏自信</div>
-            <div class="index-popup2-item">高血壓＆呼吸中止</div>
-            <div class="index-popup2-item">高血壓、自體免疫系統疾病、睡覺打鼾</div>
-            <div class="index-popup2-item">關節疼痛與壓迫</div>
+            <div @click="ill2('三高')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '三高'}]"
+            >三高</div>
+            <div @click="ill2('不孕症')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '不孕症'}]"
+            >不孕症</div>
+            <div @click="ill2('心肌梗塞')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '心肌梗塞'}]"
+            >心肌梗塞</div>
+            <div @click="ill2('衣服選擇障礙')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '衣服選擇障礙'}]"
+            >衣服選擇障礙</div>
+            <div @click="ill2('改變身形')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '改變身形'}]"
+            >改變身形</div>
+            <div @click="ill2('肝指數異常')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '肝指數異常'}]"
+            >肝指數異常</div>
+            <div @click="ill2('容貌焦慮')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '容貌焦慮'}]"
+            >容貌焦慮</div>
+            <div @click="ill2('缺乏自信')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '缺乏自信'}]"
+            >缺乏自信</div>
+            <div @click="ill2('高血壓＆呼吸中止')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '高血壓＆呼吸中止'}]"
+            >高血壓＆呼吸中止</div>
+            <div @click="ill2('高血壓、自體免疫系統疾病、睡覺打鼾')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '高血壓、自體免疫系統疾病、睡覺打鼾'}]"
+            >高血壓、自體免疫系統疾病、睡覺打鼾</div>
+            <div @click="ill2('關節疼痛與壓迫')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '關節疼痛與壓迫'}]"
+            >關節疼痛與壓迫</div>
           </div>
           <div class="index-popup2-center">
-            <div class="index-popup2-head">手術一年，從127到84公斤</div>
-            <div class="index-popup2-text">
-              我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
-              腰圍從46變36（瘦了一大圈）<br>
-              走路輕盈地像要飛起來一樣<br><br>
-
-              很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
-
-              手術後三個月內是身體的#恢復期有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
-
-              重獲自信心，但別再問我這些問題「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
-            </div>
+            <div class="index-popup2-head">{{ currentCase2.title }}</div>
+            <div class="index-popup2-text" v-html="currentCase2.text"></div>
           </div>
           <img class="index-popup2-photo" src="~assets/img/doctor/01.png" alt="">
         </div>
@@ -315,8 +351,14 @@
         <!-- 手機版 -->
         <div class="index-popup3-left index-popup3-rwd">
           <div class="index-popup3-box">
-            <div class="index-popup3-box-text index-popup3-box-select">三高袖狀胃切除手術</div>
-            <div class="index-popup3-box-text">胃繞道手術</div>
+            <div @click="surgery(surgery1)" 
+              :class="['index-popup3-box-text',
+              {'index-popup3-box-select': currentSurgery != surgery1}]"
+            >{{ surgery1 }}</div>
+            <div @click="surgery(surgery2)" 
+              :class="['index-popup3-box-text',
+              {'index-popup3-box-select': currentSurgery != surgery2}]"
+            >{{ surgery2 }}</div>
           </div>
           <div class="index-popup3-title">胃繞道手術</div>
             <div class="index-popup3-hint">一年手術後，平均減去多餘體重的77％。 50％到60％的病人仍可以維持良好的減重效果。</div>
@@ -334,26 +376,121 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+
+// 定時三秒，切換 current 數字換圖換字
+
+setInterval(()=> {
+
+  if(currentRotate.value == 5) {
+  currentRotate.value = 1
+  } else {
+    currentRotate.value = currentRotate.value + 1
+  }
+
+}, 4000)
+
+const currentRotate = ref(1)
+
 
 const isPopup1 = ref(false)
 const isPopup2 = ref(false)
 const isPopup3 = ref(false)
 
-function popup1(item:any) {
+function popup1(item) {
   isPopup1.value = true
 }
 
-function ill(item:any) {
+const currentCase = ref({ name: '', title: '', text: '' })
 
+const caseAll = ref([
+  { name: '三高', title: '手術一年，從127到84公斤', text: `
+  我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
+  腰圍從46變36（瘦了一大圈）<br>
+  走路輕盈地像要飛起來一樣<br><br>
+
+  很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
+
+  手術後三個月內是身體的#恢復期有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
+
+  重獲自信心，但別再問我這些問題「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
+  ` },
+  { name: '不孕症', title: '不孕症不孕症', text: `
+  不孕症不孕症<br>
+  不孕症不孕症<br><br>
+  ` },
+  { name: '心肌梗塞', title: '心肌梗塞心肌梗塞', text: `
+  心肌梗塞心肌梗塞<br>
+  心肌梗塞心肌梗塞<br><br>
+  ` },
+  { name: '衣服選擇障礙', title: '衣服選擇障礙衣服選擇障礙', text: `
+  衣服選擇障礙衣服選擇障礙<br>
+  衣服選擇障礙衣服選擇障礙<br><br>
+  ` },
+  { name: '改變身形', title: '改變身形改變身形', text: `
+  改變身形改變身形<br>
+  改變身形改變身形<br><br>
+  ` },
+  { name: '肝指數異常', title: '肝指數異常肝指數異常', text: `
+  肝指數異常<br>
+  肝指數異常肝指數異常<br><br>
+  ` },
+  { name: '容貌焦慮', title: '容貌焦慮', text: `
+  容貌焦慮<br>
+  容貌焦慮容貌焦慮<br><br>
+  ` },
+  { name: '缺乏自信', title: '缺乏自信', text: `
+  缺乏自信缺乏自信<br>
+  缺乏自信<br><br>
+  ` },
+  { name: '高血壓＆呼吸中止', title: '高血壓＆呼吸中止', text: `
+  高血壓＆呼吸中止<br>
+  高血壓＆呼吸中止高血壓＆呼吸中止<br><br>
+  ` },
+  { name: '高血壓、自體免疫系統疾病、睡覺打鼾', title: '高血壓、自體免疫系統疾病、睡覺打鼾', text: `
+  高血壓、自體免疫系統疾病、睡覺打鼾<br>
+  高血壓、自體免疫系統疾病、睡覺打鼾高血壓、自體免疫系統疾病、睡覺打鼾<br><br>
+  ` },
+  { name: '關節疼痛與壓迫', title: '關節疼痛與壓迫', text: `
+  關節疼痛與壓迫<br>
+  關節疼痛與壓迫關節疼痛與壓迫<br><br>
+  ` },
+]) 
+
+currentCase.value = caseAll.value[0]
+
+function ill(myName) {
+  const index = caseAll.value.findIndex(item => item.name == myName)
+  currentCase.value = caseAll.value[index]
 }
 
-function popup2(item:any) {
+// popup2
+
+function popup2(item) {
   isPopup2.value = true
 }
 
-function popup3(item:any) {
+const currentCase2 = ref({ name: '', title: '', text: '' })
+
+currentCase2.value = caseAll.value[0]
+
+function ill2(myName) {
+  const index2 = caseAll.value.findIndex(item => item.name == myName)
+  currentCase2.value = caseAll.value[index2]
+}
+
+// popup3
+
+function popup3(item) {
   isPopup3.value = true  
+}
+
+const surgery1 = ref('三高袖狀胃切除手術')
+const surgery2 = ref('胃繞道手術')
+const currentSurgery = ref('三高袖狀胃切除手術')
+
+function surgery(item) {
+  currentSurgery.value = item
 }
 
 
@@ -1254,6 +1391,7 @@ function popup3(item:any) {
 
     &-btn3 {
       width: 300px;
+      flex: none;
     }
 
     &-rwd {

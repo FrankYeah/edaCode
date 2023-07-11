@@ -103,6 +103,7 @@ export default {
   padding: 32px 74px;
   border-bottom: 1px solid #EFEFEF;
   background-color: white;
+  z-index: 1;
 
   &-desktop {
     display: block;

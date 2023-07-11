@@ -3,7 +3,9 @@
     <HeaderStatic />
     <NuxtPage class="default-main" />
     <FooterStatic />
-    <img class="default-line" src="~assets/img/ui/line.png" alt="">
+    <a class="default-line-box" href="line://ti/p/frank810729" target="_blank">
+      <img class="default-line" src="~assets/img/ui/line.png" alt="">
+    </a>
     <slot />
   </div>
 </template>
@@ -20,12 +22,15 @@
     margin-top: 103px;
   }
 
-  &-line {
+  &-line-box {
     position: fixed;
     top: 40%;
     right: 50px;
-    width: 45px;
     z-index: 1;
+  }
+
+  &-line {
+    width: 45px;
     cursor: pointer;
   }
 
@@ -129,9 +134,12 @@ textarea {
     margin-top: 80px;
   }
 
-  &-line {
+  &-line-box {
     top: 40%;
     right: 36px;
+  }
+
+  &-line {
     width: 36px;
   }
 
