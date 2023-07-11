@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     css: [
       "@/assets/css/font.css"
      ],
+     app: {
+      baseURL: '/eda/',
+    },
     vite: {
       css: {
         preprocessorOptions: {
