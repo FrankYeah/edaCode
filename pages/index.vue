@@ -129,6 +129,12 @@
           <div @click="ill('心肌梗塞')" class="index-case-btn">心肌梗塞</div>
           <div @click="ill('衣服選擇障礙')" class="index-case-btn">衣服選擇障礙</div>
           <div @click="ill('改變身形')" class="index-case-btn">改變身形</div>
+          <div @click="ill('肝指數異常')" class="index-case-btn index-case-rwd">肝指數異常</div>
+          <div @click="ill('容貌焦慮')" class="index-case-btn index-case-rwd">容貌焦慮</div>
+          <div @click="ill('缺乏自信')" class="index-case-btn index-case-rwd">缺乏自信</div>
+          <div @click="ill('高血壓＆呼吸中止')" class="index-case-btn index-case-rwd">高血壓＆呼吸中止</div>
+          <div @click="ill('高血壓、自體免疫系統疾病、睡覺打鼾')" class="index-case-btn index-case-btn3 index-case-rwd">高血壓、自體免疫系統疾病、睡覺打鼾</div>
+          <div @click="ill('關節疼痛與壓迫')" class="index-case-btn index-case-rwd">關節疼痛與壓迫</div>
           <div @click="popup2('close')" class="index-case-btn2">更多</div>
         </div>
         <div class="index-case-row3">
@@ -191,8 +197,10 @@
         <img class="index-contact-img2" src="~assets/img/ui/copy.png" alt="">
       </div>
       <div class="index-contact-box">
-        <img class="index-contact-img" src="~assets/img/ui/line.png" alt="">
-        <div class="index-contact-num">LineID</div>
+        <div class="index-contact-inner">
+          <img class="index-contact-img" src="~assets/img/ui/line.png" alt="">
+          <div class="index-contact-num">LineID</div>
+        </div>
         <img class="index-contact-img2" src="~assets/img/ui/leave.png" alt="">
       </div>
     </div>
@@ -279,7 +287,9 @@
             <div class="index-popup3-sub">減重手術介紹</div>
           </div>
         </div>
-        <div class="index-popup3-row2">
+
+        <!-- 桌面版 -->
+        <div class="index-popup3-row2 index-popup3-desktop">
           <div class="index-popup3-left">
             <div class="index-popup3-title">袖狀胃切除手術</div>
             <div class="index-popup3-hint">術後第一年，病人將可以減去他們多餘體重的40-70%。</div>
@@ -301,6 +311,23 @@
             <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
           </div>
         </div>
+
+        <!-- 手機版 -->
+        <div class="index-popup3-left index-popup3-rwd">
+          <div class="index-popup3-box">
+            <div class="index-popup3-box-text index-popup3-box-select">三高袖狀胃切除手術</div>
+            <div class="index-popup3-box-text">胃繞道手術</div>
+          </div>
+          <div class="index-popup3-title">胃繞道手術</div>
+            <div class="index-popup3-hint">一年手術後，平均減去多餘體重的77％。 50％到60％的病人仍可以維持良好的減重效果。</div>
+            <div class="index-popup3-text1">效果</div>
+            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。 利用減少胃容積及減少促食慾賀爾蒙(Ghrelin)的原理限制食量，達到減重效果。 袖狀胃切除術也是利用腹腔鏡進行，透過腹部五個或六個小的切口， 本中心的醫師將會使用高階攝像機（腹腔鏡）和多種專門的手術器械，來進行手術，一般術後約2-3天即可出院回家。</div>
+            <div class="index-popup3-text1">效果</div>
+            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
+            <div class="index-popup3-text1">效果</div>
+            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
+        </div>
+
       </div>
     </div>
 
@@ -513,6 +540,7 @@ function popup3(item:any) {
     &-head {
       position: relative;
       font-size: 40px;
+      font-weight: 700;
       line-height: 1.6;
       z-index: 1;
 
@@ -576,6 +604,10 @@ function popup3(item:any) {
       &:hover {
         opacity: 0.8;
       }
+    }
+
+    &-rwd {
+      display: none;
     }
 
     &-row3 {
@@ -704,6 +736,7 @@ function popup3(item:any) {
       position: relative;
       font-size: 40px;
       line-height: 1.6;
+      z-index: 1;
 
       &::before {
         content: '';
@@ -931,6 +964,14 @@ function popup3(item:any) {
     background-color: rgba(black, 0.5);
     z-index: 2;
 
+    &-desktop {
+      display: block;
+    }
+
+    &-rwd {
+      display: none;
+    }
+
     &-outer {
       position: relative;
       width: 90%;
@@ -991,7 +1032,7 @@ function popup3(item:any) {
     }
 
     &-hint {
-      margin-top: 4px;
+      margin-top: 8px;
       color: #772685;
     }
 
@@ -1001,6 +1042,7 @@ function popup3(item:any) {
     }
 
     &-text2 {
+      margin-top: 8px;
       color: #5C5757;
       line-height: 1.5;
     }
@@ -1145,45 +1187,56 @@ function popup3(item:any) {
   //case
 
   &-case {
-    margin: 100px 50px 0px;
-    padding: 64px 0px 107px;
-    border-radius: 8px;
+    margin: 80px 0px 0px;
+    padding: 64px 0px 88px;
 
     &-outer {
-      width: 80%
+      width: 100%
     }
 
     &-row {
-      
+      flex-direction: column;
+      align-items: center;
     }
 
     &-head {
-      font-size: 40px;
+      font-size: 20px;
 
       &::before {
-        position: absolute;
-        left: -10px;
+        left: -20px;
         top: -10px;
-        width: 166px;
-        height: 40px;
+        width: 133px;
+        height: 27px;
       }
 
     }
 
     &-sub {
-      margin: 16px 0px 0px 38px;
+      margin: 8px 0px 0px 0px;
     }
 
     &-row2 {
-      margin-top: 24px;
+      overflow: scroll;
+      margin-top: 22px;
+      scrollbar-width: thin;
+      scrollbar-color: transparent transparent;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
     }
 
     &-btn {
-      width: 150px;
-      height: 45px;
-      line-height: 45px;
-      margin-right: 27px;
-      border-radius: 100px;
+      margin-right: 16px;
+      flex: none;
     }
 
     &-btn-select {
@@ -1191,31 +1244,41 @@ function popup3(item:any) {
     }
 
     &-btn2 {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
+      display: none;
+      flex: none;
 
       &:hover {
         opacity: 0.8;
       }
     }
 
+    &-btn3 {
+      width: 300px;
+    }
+
+    &-rwd {
+      display: block;
+    }
+
     &-row3 {
-      margin-top: 58px;
+      flex-direction: column;
+      margin: 40px 24px 0px;
     }
 
     &-title {
-      font-size: 18px;
+      font-size: 14px;
     }
 
     &-text {
-      margin-top: 24px;
-      width: calc(100% - 70px);
+      font-size: 12px;
+      margin-top: 16px;
+      width: calc(100%);
     }
 
     &-photo {
-      width: 288px;
-      height: 100%;
+      width: 100%;
+      height: auto;
+      margin-top: 25px;
     }
     
   }
@@ -1223,40 +1286,50 @@ function popup3(item:any) {
   //service
 
   &-service {
-    margin: 128px 0px 0px;
-    padding: 0px 100px;
+    margin: 64px 0px 0px;
+    padding: 0px 24px;
 
     &-row {
-      
+      flex-direction: column;
+      align-items: center;
     }
 
     &-left {
-      margin: 80px 98px 0px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 0px 0px 0px;
     }
 
     &-head {
-      font-size: 40px;
-      line-height: 1.6;
+      font-size: 20px;
 
       &::before {
-        left: -10px;
+        left: -20px;
         top: -10px;
-        width: 166px;
-        height: 40px;
+        width: 133px;
+        height: 27px;
       }
 
     }
 
     &-sub {
-      margin-top: 8px;
+      
     }
 
     &-right {
-      border-radius: 8px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 16px;
+      border: 0px;
     }
 
     &-box {
-      padding: 21px 18px 27px;
+      width: 340px;
+      margin-top: 24px;
+      padding: 27px 21px;
+      border: 2px solid #E8E8E8;
+      text-align: center;
     }
 
     &-box-last {
@@ -1264,25 +1337,21 @@ function popup3(item:any) {
     }
 
     &-img {
-      width: 123px;
+      margin: auto;
     }
 
     &-title {
-      margin-top: 41px;
-      font-size: 18px;
+      
     }
 
     &-text {
-      margin-top: 8px;
-      font-size: 12px;
+      
     }
 
     &-more {
-      margin-top: 90px;
-      width: 14vw;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 8px;
+      margin-top: 35px;
+      width: 100%;
+      border-radius: 0px;
     }
     
   }
@@ -1290,19 +1359,18 @@ function popup3(item:any) {
   //caontact
 
   &-contact {
-    margin: 100px 0px 0px;
-    padding: 108px 0px 80px;
+    margin: 64px 0px 0px;
+    padding: 76px 0px 80px;
 
 
     &-head {
-      font-size: 40px;
-      line-height: 1.6;
+      font-size: 20px;
 
       &::before {
-        left: -10px;
+        left: -20px;
         top: -10px;
-        width: 166px;
-        height: 40px;
+        width: 133px;
+        height: 27px;
       }
 
     }
@@ -1312,9 +1380,8 @@ function popup3(item:any) {
     }
 
     &-box {
-      width: 400px;
-      margin-top: 18px;
-      padding: 14px;
+      max-width: 400px;
+      width: calc(100% - 36px);
     }
 
     &-inner {
@@ -1332,8 +1399,7 @@ function popup3(item:any) {
     }
 
     &-img2 {
-      width: 24px;
-      height: 24px;
+      
     }
     
   }
@@ -1341,57 +1407,52 @@ function popup3(item:any) {
   //location
 
   &-location {
-    width: 80%;
+    width: 100%;
+    padding-bottom: 90px;
   }
 
   //popup
 
   &-popup {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 10vh;
+    padding-top: 25px;
 
     &-outer {
-      width: 90%;
-      padding: 36px 20px 40px;
-      border-radius: 8px;
+      width: calc(100vw - 50px);
+      padding: 40px 24px 33px;
     }
 
     &-close {
-      right: -14px;
-      top: -14px;
-      width: 40px;
-      height: 40px;
+      
     }
 
     &-row {
-      
+      flex-direction: column;
     }
 
     &-img {
-      width: 50%;
-      margin-right: 50px;
+      width: 100%;
+      margin-right: 0px;
     }
 
     &-right {
-      
+      margin-top: 20px;
     }
 
     &-head {
-      font-size: 24px;
+      font-size: 16px;
     }
 
     &-title {
-      margin: 24px 0px 8px;
+      
     }
 
     &-text {
-      line-height: 1.5;
+      
     }
     
   }
 
-  //popup2
+  //popup2 暫無需畫面
 
   &-popup2 {
     width: 100vw;
@@ -1451,21 +1512,23 @@ function popup3(item:any) {
   //popup3
 
   &-popup3 {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 10vh;
+    padding-top: 30px;
+
+    &-desktop {
+      display: none;
+    }
+
+    &-rwd {
+      display: block;
+    }
 
     &-outer {
-      width: 90%;
-      padding: 36px 80px 56px;
-      border-radius: 8px;
+      width: calc(100vw - 50px);
+      padding: 32px 24px 64px;
     }
 
     &-close {
-      right: -14px;
-      top: -14px;
-      width: 40px;
-      height: 40px;
+      
     }
 
     &-row {
@@ -1473,37 +1536,57 @@ function popup3(item:any) {
     }
 
     &-icon {
-      width: 44px;
-      margin-right: 16px;
+      
     }
 
     &-head {
-      font-size: 18px;
+      
     }
 
     &-sub {
-      margin-top: 4px;
-      font-size: 12px;
+      margin-top: 8px;
     }
 
     &-row2 {
-      margin-top: 38px;
+      
     }
 
     &-left {
-      width: 46%;
+      width: 100%;
+    }
+
+    &-box {
+      display: flex;
+      margin-top: 24px;
+      border: 1px solid #C8B4F1;
+      border-radius: 4px;
+    }
+
+    &-box-text {
+      width: 50%;
+      height: 67px;
+      line-height: 67px;
+      text-align: center;
+      background-color: #772685;
+      color: white;
+    }
+
+    &-box-select {
+      color: #C8B4F1;
+      background-color: white;
     }
 
     &-title {
-      font-size: 24px;
+      margin-top: 20px;
+      font-size: 16px;
     }
 
     &-hint {
-      margin-top: 4px;
+      margin-top: 8px;
     }
 
     &-text1 {
-      margin-top: 24px;
+      margin-top: 29px;
     }
 
     &-text2 {
@@ -1511,8 +1594,8 @@ function popup3(item:any) {
     }
 
     &-right {
-      width: 46%;
-      margin-top: 8px;
+      
+      
     }
     
   }
