@@ -3,7 +3,7 @@
     <HeaderStatic />
     <NuxtPage class="default-main" />
     <FooterStatic />
-    <a class="default-line-box" href="line://ti/p/frank810729" target="_blank">
+    <a class="default-line-box" href="http://line.me/ti/p/~frank810729" target="_blank">
       <img class="default-line" src="~assets/img/ui/line.png" alt="">
     </a>
     <slot />

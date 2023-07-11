@@ -213,14 +213,14 @@
     <div id="contact" class="index-contact">
       <div class="index-contact-head">聯繫我們</div>
       <div class="index-contact-sub">請透過一下聯繫方式聯繫我們</div>
-      <a href="tel:+886-917218567" target="_blank" class="index-contact-box">
+      <a href="tel:+886-75596126" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/phone2.png" alt="">
           <div class="index-contact-num">07-559-6126</div>
         </div>
         <img class="index-contact-img2" src="~assets/img/ui/copy.png" alt="">
       </a>
-      <a href="line://ti/p/frank810729" target="_blank" class="index-contact-box">
+      <a href="http://line.me/ti/p/~frank810729" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/line.png" alt="">
           <div class="index-contact-num">LineID</div>
@@ -1353,7 +1353,8 @@ function surgery(item) {
     }
 
     &-row2 {
-      overflow: scroll;
+      overflow-x: scroll;
+      overflow-y: scroll;
       margin-top: 22px;
       scrollbar-width: thin;
       scrollbar-color: transparent transparent;
