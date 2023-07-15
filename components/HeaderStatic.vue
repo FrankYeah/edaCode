@@ -44,30 +44,30 @@
     <div v-if="isPopup" class="header-outer">
       <div class="header-inner">
         <div class="header-box2">
-          <nuxt-link to="/">
+          <nuxt-link @click="isPopup = false" to="/">
             <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
           </nuxt-link>
           <img @click="isPopup = false" class="header-menu" src="~assets/img/ui/close.png" alt="">
         </div>
 
         <div class="header-row">
-          <nuxt-link to="/#team" class="header-item">
+          <nuxt-link @click="isPopup = false" to="/#team" class="header-item">
             <div class="header-text">醫療團隊</div>
             <div class="header-en">TEAM</div>
           </nuxt-link>
-          <nuxt-link to="/#case" class="header-item">
+          <nuxt-link @click="isPopup = false" to="/#case" class="header-item">
             <div class="header-text">成功個案</div>
             <div class="header-en">EXAMPLE</div>
           </nuxt-link>
-          <nuxt-link to="/#service" class="header-item">
+          <nuxt-link @click="isPopup = false" to="/#service" class="header-item">
             <div class="header-text">減重服務</div>
             <div class="header-en">SERVICE</div>
           </nuxt-link>
-          <nuxt-link to="/#contact" class="header-item">
+          <nuxt-link @click="isPopup = false" to="/#contact" class="header-item">
             <div class="header-text">聯繫我們</div>
             <div class="header-en">CONTACT</div>
           </nuxt-link>
-          <nuxt-link to="/#location" class="header-item">
+          <nuxt-link @click="isPopup = false" to="/#location" class="header-item">
             <div class="header-text">診所位置</div>
             <div class="header-en">LOCATION</div>
           </nuxt-link>

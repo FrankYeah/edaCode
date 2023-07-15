@@ -642,6 +642,7 @@ function surgery(item) {
       margin: 70px auto 0px;
       padding: 14px 0px;
       border: 1px solid #772685;
+      border-radius: 8px;
       color: #772685;
       cursor: pointer;
 
@@ -825,7 +826,7 @@ function surgery(item) {
     }
 
     &-img {
-      width: 123px;
+      width: 80px;
     }
 
     &-title {
@@ -935,6 +936,7 @@ function surgery(item) {
   &-location {
     width: 80%;
     margin: auto;
+    padding-bottom: 80px;
   }
 
   //popup
@@ -1154,13 +1156,15 @@ function surgery(item) {
     }
 
     &-row2 {
-      margin-top: 38px;
+      margin-top: 22px;
       display: flex;
       justify-content: space-between;
     }
 
     &-left {
       width: 46%;
+      padding: 16px;
+      background-color: #FBFBFB;
     }
 
     &-title {
@@ -1186,7 +1190,7 @@ function surgery(item) {
 
     &-right {
       width: 46%;
-      margin-top: 8px;
+      padding: 16px;
       color: #5C5757;
     }
     
@@ -1692,6 +1696,8 @@ function surgery(item) {
 
     &-left {
       width: 100%;
+      padding: 0px;
+      background-color: transparent;
     }
 
     &-box {
