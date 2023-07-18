@@ -24,7 +24,7 @@
 
   &-line-box {
     position: fixed;
-    top: 40%;
+    bottom: 20%;
     right: 50px;
     z-index: 1;
   }
@@ -135,7 +135,6 @@ textarea {
   }
 
   &-line-box {
-    top: 40%;
     right: 36px;
   }
 

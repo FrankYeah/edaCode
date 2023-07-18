@@ -14,10 +14,10 @@
         </div>
         <div class="index-main-right">
           <div v-if="currentRotate == 1" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮1</div>
-          <div v-if="currentRotate == 2" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮2</div>
-          <div v-if="currentRotate == 3" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮3</div>
-          <div v-if="currentRotate == 4" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮4</div>
-          <div v-if="currentRotate == 5" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮5</div>
+          <div v-if="currentRotate == 2" class="index-main-text">您有任何問題，親切的醫師都在診所為您服務</div>
+          <div v-if="currentRotate == 3" class="index-main-text">四位醫師＋個管師＋營養師的全方位照護</div>
+          <div v-if="currentRotate == 4" class="index-main-text">全心投入於外科手術減重，帶來更好的效果、降低風險與副作用</div>
+          <div v-if="currentRotate == 5" class="index-main-text">我們給您最舒適的住房體驗</div>
           <div class="index-main-dot-row">
             <!-- class if -->
             <div :class="['index-main-dot',
@@ -239,26 +239,14 @@
       <div class="index-popup-outer">
         <img @click="isPopup1 = false" class="index-popup-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup-row">
-          <img class="index-popup-img" src="~assets/img/des/D01.png" alt="">
+          <img class="index-popup-img"  :src="`${useAsset(popup1Value.img)}`" alt="">
           <div class="index-popup-right">
-            <div class="index-popup-head">你有決心，我們有方法，賀我們一起，迎向健康自信的未來！</div>
+            <div class="index-popup-head">{{ popup1Value.head }}</div>
             <div class="index-popup-title">學經歷</div>
-            <div class="index-popup-text">
-              大林慈濟醫院減重暨代謝手術中心主治醫師<br>
-              大林慈濟醫院一般外科主治醫師<br>
-              消化外科專科醫師<br>
-              日本京都大學附設醫院肝膽胰移植外科短期受訓醫師<br>
-              慈濟大學醫學系畢業
+            <div class="index-popup-text" v-html="popup1Value.text1">
             </div>
             <div class="index-popup-title">醫療專長</div>
-            <div class="index-popup-text">
-              腹腔鏡代謝及減重手術<br>
-              如袖狀胃切除<br>
-              胃繞道手術<br>
-              營養及飲食控制減重<br>
-              藥物減重<br>
-              腹腔鏡疝氣修補術<br>
-              腹腔鏡胃癌手術及肝膽胰手術
+            <div class="index-popup-text" v-html="popup1Value.text2">
             </div>
           </div>
         </div>
@@ -397,8 +385,112 @@ const isPopup1 = ref(false)
 const isPopup2 = ref(false)
 const isPopup3 = ref(false)
 
-function popup1(item) {
+const popup1Data = ref([
+  {
+    img: 'img/des/D01.png',
+    name: '建翰',
+    head: '「你若有決心，我就有方法」',
+    text1: `
+義大醫院一般外科主治醫師<br>
+台灣代謝及減重外科專科醫師<br>
+台灣乳房醫學會專科醫師<br>
+台灣消化系外科專科醫師<br>
+大林慈濟醫院一般外科總醫師<br>
+大林慈濟醫院一般外科主治醫師<br>
+大林慈濟醫院減重與代謝手術治療中心主治醫師<br>
+日本京都大學附設醫院肝膽胰移植外科短期受訓醫師<br>
+慈濟大學醫學系學士
+    `,
+    text2: `
+腹腔鏡減重與代謝手術<br>
+腹腔鏡消化道與肝膽胰微創手術<br>
+腹腔鏡及傳統疝氣修補手術<br>
+腹部外科急症手術、外傷急救與重症醫學<br>
+乳癌篩檢及診斷、乳房超音波檢查及乳房手術
+    `
+  },
+  {
+    img: 'img/des/D02.png',
+    name: '忠延',
+    head: '「給自己一次機會改變！」',
+    text1: `
+義大醫院一般外科主治醫師<br>
+義大癌治療醫院亞洲肥胖醫學研究中心副科主任<br>
+台灣代謝及減重外科醫學會專科醫師<br>
+台灣外科醫學會外科專科醫師<br>
+台灣消化系外科醫學會專科醫師<br>
+台灣內分泌外科醫學會專科醫師<br>
+台灣乳房專科醫師<br>
+台灣乳房外科專科醫師
+    `,
+    text2: `
+腹腔鏡減重手術及糖尿病手術<br>
+頸部無疤痕內視鏡甲狀腺手術、傳統甲狀腺手術、副甲狀腺手術<br>
+乳癌篩檢、乳癌手術、乳房超音波檢查、微創乳房手術<br>
+腹腔鏡微創胃腸肝膽手術<br>
+腹腔鏡微創疝氣手術、傳統疝氣手術
+    `
+  },
+  {
+    img: 'img/des/D03.png',
+    name: '昱彰',
+    head: '「選擇不一樣的人生與人『身』」',
+    text1: `
+義大醫院家庭暨社區醫學部家庭醫學科主治醫師<br>
+義大減重中心主治醫師<br>
+義大醫院職業醫學科訓練醫師<br>
+全國醫師醫療產業工會常務理事<br>
+台灣大學公共衛生碩士學位學程社會及行為科學組就讀<br>
+義大醫院PGY、住院醫師（模範住院醫師)、總醫師、主治醫師<br>
+私立高雄醫學大學醫學系、實習醫師
+    `,
+    text2: `
+慢性病（高血壓、糖尿病、高血脂、骨質疏鬆症）之治療與追蹤<br>
+門診常見疾病的診斷及治療<br>
+健康飲食衛教<br>
+運動處方箋開立<br>
+戒菸治療與衛教<br>
+成人預防保健<br>
+兒童預防保健
+    `
+  },
+  {
+    img: 'img/des/D04.png',
+    name: '暐霖',
+    head: '「真心想，就會事成」',
+    text1: `
+義大醫院家庭暨社區醫學部主治醫師<br>
+義大大昌醫院纖體健康中心副主任<br>
+中華民國家庭醫學科專科醫師<br>
+中華民國骨質疏鬆症專科醫師<br>
+台灣肥胖醫學會會員<br>
+糖尿病共同照護網收案醫師<br>
+戒菸治療服務醫師<br>
+義大醫院家醫科住院醫師、總醫師、研究醫師<br>
+高雄醫學大學醫學系學士
+    `,
+    text2: `
+門診常見急慢性疾病的診斷及治療<br>
+骨質疏鬆症<br>
+內科減重（飲食調整及藥物輔助療法）<br>
+青少年肥胖<br>
+整合式健康照護、預防保健諮詢
+    `
+  },
+])
+
+const popup1Value = ref({
+  img: '',
+  name: '',
+  head: '',
+  text1: ``,
+  text2: ``
+})
+
+function popup1(myName) {
   isPopup1.value = true
+  const index3 = popup1Data.value.findIndex(item => item.name == myName)
+  popup1Value.value = popup1Data.value[index3]
 }
 
 const currentCase = ref({ name: '', title: '', text: '' })
