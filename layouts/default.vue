@@ -10,7 +10,21 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
+
+const title = ref('義大專業醫療團隊')
+const description = ref('2023年本中心獲頒「國家生技醫療品質獎」殊榮，您有任何問題，親切的醫師都在診所為您服務，四位醫師＋個管師＋營養師的全方位照護，全心投入於外科手術減重，帶來更好的效果、降低風險與副作用，我們給您最舒適的住房體驗')
+
+// This will be reactive even you change title/description above
+useHead({
+  title,
+  meta: [
+    { name: 'description', content: description},
+    { name: 'og:description', content: description},
+    { name: 'og:title', content: title},
+    { name: 'og:img', content: useAsset('img/star-main/1.jpg')},
+  ]
+})
 
 </script>
 
