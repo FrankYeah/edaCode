@@ -5,19 +5,19 @@
         <div class="index-main-left">
           <div class="index-main-box">
             <!-- vif -->
-            <img v-if="currentRotate == 1" class="index-main-img" src="~assets/img/banner/b01.png" alt="">
-            <img v-if="currentRotate == 2" class="index-main-img" src="~assets/img/banner/b02.png" alt="">
-            <img v-if="currentRotate == 3" class="index-main-img" src="~assets/img/banner/b03.png" alt="">
-            <img v-if="currentRotate == 4" class="index-main-img" src="~assets/img/banner/b04.png" alt="">
-            <img v-if="currentRotate == 5" class="index-main-img" src="~assets/img/banner/b05.png" alt="">
+            <img v-show="currentRotate == 1" class="index-main-img" src="~assets/img/banner/b01.png" alt="">
+            <img v-show="currentRotate == 2" class="index-main-img" src="~assets/img/banner/b02.png" alt="">
+            <img v-show="currentRotate == 3" class="index-main-img" src="~assets/img/banner/b03.png" alt="">
+            <img v-show="currentRotate == 4" class="index-main-img" src="~assets/img/banner/b04.png" alt="">
+            <img v-show="currentRotate == 5" class="index-main-img" src="~assets/img/banner/b05.png" alt="">
           </div>
         </div>
         <div class="index-main-right">
-          <div v-if="currentRotate == 1" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮</div>
-          <div v-if="currentRotate == 2" class="index-main-text">您有任何問題，親切的醫師都在診所為您服務</div>
-          <div v-if="currentRotate == 3" class="index-main-text">四位醫師＋個管師＋營養師的全方位照護</div>
-          <div v-if="currentRotate == 4" class="index-main-text">全心投入於外科手術減重，帶來更好的效果、降低風險與副作用</div>
-          <div v-if="currentRotate == 5" class="index-main-text">我們給您最舒適的住房體驗</div>
+          <div v-show="currentRotate == 1" class="index-main-text">2023年本中心獲頒「國家生技醫療品質獎」殊榮</div>
+          <div v-show="currentRotate == 2" class="index-main-text">您有任何問題，親切的醫師都在診所為您服務</div>
+          <div v-show="currentRotate == 3" class="index-main-text">四位醫師＋個管師＋營養師的全方位照護</div>
+          <div v-show="currentRotate == 4" class="index-main-text">全心投入於外科手術減重，帶來更好的效果、降低風險與副作用</div>
+          <div v-show="currentRotate == 5" class="index-main-text">我們給您最舒適的住房體驗</div>
           <div class="index-main-dot-row">
             <!-- class if -->
             <div :class="['index-main-dot',
@@ -1594,7 +1594,6 @@ function surgery(item) {
 
     &-row2 {
       overflow-x: scroll;
-      overflow-y: scroll;
       margin-top: 22px;
       scrollbar-width: thin;
       scrollbar-color: transparent transparent;
@@ -1814,7 +1813,9 @@ function surgery(item) {
     }
 
     &-right {
+      max-height: 50vh;
       margin-top: 20px;
+      overflow-y: scroll;
     }
 
     &-head {
