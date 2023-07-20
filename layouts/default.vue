@@ -22,7 +22,7 @@ useHead({
     { name: 'description', content: description},
     { name: 'og:description', content: description},
     { name: 'og:title', content: title},
-    { name: 'og:img', content: useAsset('img/star-main/1.jpg')},
+    { name: 'og:img', content: useAsset('img/doctor/01.png')},
   ]
 })
 

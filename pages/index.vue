@@ -386,6 +386,20 @@
 
 <script setup>
 
+useHead({
+  title: '義大專業的醫療團隊',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  charset: 'utf-8',
+  meta: [
+    { name: 'description', content: '2023年本中心獲頒「國家生技醫療品質獎」的殊榮，您有任何問題，親切的醫師都在診所為您服務，四位醫師＋個管師＋營養師的全方位照護，全心投入於外科手術減重，帶來更好的效果、降低風險與副作用，我們給您最舒適的住房體驗' },
+    { name: 'og:img', content: useAsset('img/logo/logo.png')},
+  ],
+  bodyAttrs: {
+    
+  }
+})
+
+
 // 定時三秒，切換 current 數字換圖換字
 
 setInterval(()=> {
