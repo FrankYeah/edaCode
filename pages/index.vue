@@ -10,6 +10,8 @@
             <img v-show="currentRotate == 3" class="index-main-img" src="~assets/img/banner/b03.png" alt="">
             <img v-show="currentRotate == 4" class="index-main-img" src="~assets/img/banner/b04.png" alt="">
             <img v-show="currentRotate == 5" class="index-main-img" src="~assets/img/banner/b05.png" alt="">
+            <img v-if="currentRotate != 1" @click="leftGo()" class="index-main-btn-left" src="~assets/img/ui/left.png" alt="">
+            <img v-if="currentRotate != 5" @click="rightGo()"  class="index-main-btn-right" src="~assets/img/ui/right.png" alt="">
           </div>
         </div>
         <div class="index-main-right">
@@ -49,6 +51,14 @@
           <div class="index-team-row2">
             <div class="index-team-name">建翰 醫師</div>
             <div class="index-team-word">「你若有決心，我就有方法」</div>
+            <div class="index-team-surgery">
+              <div>腹腔鏡減重手術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
+            <div class="index-team-surgery">
+              <div>內視鏡胃袖狀縫合術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
             <div @click="popup1('建翰')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/01.png" alt="">
@@ -58,6 +68,14 @@
           <div class="index-team-row2">
             <div class="index-team-name">忠延 醫師</div>
             <div class="index-team-word">「給自己一次機會改變！」</div>
+            <div class="index-team-surgery">
+              <div>腹腔鏡胃繞道手術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
+            <div class="index-team-surgery">
+              <div>微創胃腸肝膽手術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
             <div @click="popup1('忠延')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/02.png" alt="">
@@ -69,6 +87,14 @@
           <div class="index-team-row2">
             <div class="index-team-name">昱彰 醫師</div>
             <div class="index-team-word">「選擇不一樣的人生與人『身』」</div>
+            <div class="index-team-surgery">
+              <div>運動處方</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
+            <div class="index-team-surgery">
+              <div>藥物暨營養內科減重</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
             <div @click="popup1('昱彰')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/03.png" alt="">
@@ -78,6 +104,14 @@
           <div class="index-team-row2">
             <div class="index-team-name">暐霖 醫師</div>
             <div class="index-team-word">「真心想，就會事成」</div>
+            <div class="index-team-surgery">
+              <div>無傷口胃鏡水球術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
+            <div class="index-team-surgery">
+              <div>腹腔鏡微創縮胃術</div>
+              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+            </div>
             <div @click="popup1('暐霖')" class="index-team-more">瞭解更多</div>
           </div>
           <img class="index-team-photo" src="~assets/img/doctor/04.png" alt="">
@@ -92,6 +126,14 @@
             <div>
               <div class="index-team-name">建翰 醫師</div>
               <div class="index-team-word">「你若有決心，我就有方法」</div>
+              <div class="index-team-surgery">
+                <div>腹腔鏡減重手術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
+              <div class="index-team-surgery">
+                <div>內視鏡胃袖狀縫合術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
             </div>
           </div>
           <div @click="popup1('建翰')" class="index-team-more">瞭解更多</div>
@@ -103,6 +145,14 @@
             <div>
               <div class="index-team-name">忠延 醫師</div>
               <div class="index-team-word">「你若有決心，我就有方法」</div>
+              <div class="index-team-surgery">
+                <div>腹腔鏡胃繞道手術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
+              <div class="index-team-surgery">
+                <div>微創胃腸肝膽手術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
             </div>
           </div>
           <div @click="popup1('忠延')" class="index-team-more">瞭解更多</div>
@@ -116,6 +166,14 @@
             <div>
               <div class="index-team-name">昱彰 醫師</div>
               <div class="index-team-word">「你若有決心，我就有方法」</div>
+              <div class="index-team-surgery">
+                <div>運動處方</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
+              <div class="index-team-surgery">
+                <div>藥物暨營養內科減重</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
             </div>
           </div>
           <div @click="popup1('昱彰')" class="index-team-more">瞭解更多</div>
@@ -127,6 +185,14 @@
             <div>
               <div class="index-team-name">暐霖 醫師</div>
               <div class="index-team-word">「你若有決心，我就有方法」</div>
+              <div class="index-team-surgery">
+                <div>無傷口胃鏡水球術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
+              <div class="index-team-surgery">
+                <div>腹腔鏡微創縮胃術</div>
+                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              </div>
             </div>
           </div>
           <div @click="popup1('暐霖')" class="index-team-more">瞭解更多</div>
@@ -255,8 +321,10 @@
             <div class="index-popup-text" v-html="popup1Value.text1">
             </div>
             <div class="index-popup-title">醫療專長</div>
-            <div class="index-popup-text" v-html="popup1Value.text2">
-            </div>
+            <div class="index-popup-text" v-html="popup1Value.text2"></div>
+            <a :href="popup1Value.link" target="_blannk" class="index-popup-reserve">
+              <div class="index-popup-reserve-text">預約門診</div>
+            </a>
           </div>
         </div>
       </div>
@@ -402,15 +470,22 @@ useHead({
 
 // 定時三秒，切換 current 數字換圖換字
 
-setInterval(()=> {
-
+const intervalId = setInterval(()=> {
   if(currentRotate.value == 5) {
   currentRotate.value = 1
   } else {
     currentRotate.value = currentRotate.value + 1
   }
+}, 5000)
 
-}, 4000)
+function leftGo() {
+  currentRotate.value = currentRotate.value - 1
+}
+
+function rightGo() {
+  currentRotate.value = currentRotate.value + 1
+}
+
 
 const currentRotate = ref(1)
 
@@ -441,7 +516,8 @@ const popup1Data = ref([
 腹腔鏡及傳統疝氣修補手術<br>
 腹部外科急症手術、外傷急救與重症醫學<br>
 乳癌篩檢及診斷、乳房超音波檢查及乳房手術
-    `
+    `,
+    link: 'https://bit.ly/JiHaCh'
   },
   {
     img: 'img/des/D02.png',
@@ -463,7 +539,8 @@ const popup1Data = ref([
 乳癌篩檢、乳癌手術、乳房超音波檢查、微創乳房手術<br>
 腹腔鏡微創胃腸肝膽手術<br>
 腹腔鏡微創疝氣手術、傳統疝氣手術
-    `
+    `,
+    link: 'https://bit.ly/CuYaC'
   },
   {
     img: 'img/des/D03.png',
@@ -486,7 +563,8 @@ const popup1Data = ref([
 戒菸治療與衛教<br>
 成人預防保健<br>
 兒童預防保健
-    `
+    `,
+    link: 'https://bit.ly/CWeLi'
   },
   {
     img: 'img/des/D04.png',
@@ -509,7 +587,8 @@ const popup1Data = ref([
 內科減重（飲食調整及藥物輔助療法）<br>
 青少年肥胖<br>
 整合式健康照護、預防保健諮詢
-    `
+    `,
+    link: 'https://bit.ly/CYuC'
   },
 ])
 
@@ -764,11 +843,36 @@ function surgery(item) {
     }
 
     &-box {
-
+      position: relative;
     }
 
     &-img {
 
+    }
+
+    &-btn-left {
+      position: absolute;
+      left: 10px;
+      top: calc(50% - 20px);
+      width: 44px;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-btn-right {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 20px);
+      width: 44px;
+      cursor: pointer;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-right {
@@ -877,19 +981,35 @@ function surgery(item) {
     }
 
     &-name {
-      margin-top: 42px;
+      margin-top: 14px;
       font-size: 24px;
     }
 
     &-word {
-      margin-top: 14px;
+      margin: 10px 8px;
       color: #888;
       font-size: 12px;
     }
 
+    &-surgery {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+      padding: 2px 18px;
+      border-radius: 100px;
+      background: #F4AFB0;
+      color: white;
+    }
+
+    &-surgery-photo {
+      width: 32px;
+      margin-left: 4px;
+    }
+
     &-more {
       width: 228px;
-      margin: 70px auto 0px;
+      margin: 30px auto 0px;
       padding: 14px 0px;
       border: 1px solid #772685;
       border-radius: 8px;
@@ -902,7 +1022,7 @@ function surgery(item) {
     }
 
     &-photo {
-      width: 168px;
+      width: 188px;
     }
     
   }
@@ -1253,6 +1373,23 @@ function surgery(item) {
       line-height: 1.5;
       color: #5C5757;
     }
+
+    &-reserve {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+
+      &-text {
+        width: 130px;
+        text-align: center;
+        margin: 30px auto 0px;
+        padding: 13px 0px;
+        border: 1px solid #772685;
+        border-radius: 4px;
+        color: #772685;
+        cursor: pointer;
+      }
+    }
     
   }
 
@@ -1471,6 +1608,14 @@ function surgery(item) {
 
     }
 
+    &-btn-left {
+
+    }
+
+    &-btn-right {
+
+    }
+
     &-right {
       margin-left: 0px;
     }
@@ -1561,6 +1706,14 @@ function surgery(item) {
     &-word {
       margin-top: 14px;
       font-size: 12px;
+    }
+
+    &-surgery {
+      font-size: 12px;
+    }
+
+    &-surgery-photo {
+
     }
 
     &-more {
@@ -1827,6 +1980,7 @@ function surgery(item) {
     }
 
     &-right {
+      position: relative;
       max-height: 50vh;
       margin-top: 20px;
       overflow-y: scroll;
@@ -1842,6 +1996,18 @@ function surgery(item) {
 
     &-text {
       
+    }
+
+    &-reserve {
+      position: initial;
+
+      &-text {
+        width: 100%;
+        text-align: center;
+        margin: 16px auto 0px;
+        padding: 15px 0px;
+        border: 1px solid #772685;
+      }
     }
     
   }
