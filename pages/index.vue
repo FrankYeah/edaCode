@@ -288,17 +288,18 @@
     <div id="contact" class="index-contact">
       <div class="index-contact-head">聯繫我們</div>
       <div class="index-contact-sub">請透過一下聯繫方式聯繫我們</div>
-      <a href="tel:+886-75596126" target="_blank" class="index-contact-box">
+      <a href="tel:+886-76150933" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/phone2.png" alt="">
-          <div class="index-contact-num">07-559-6126</div>
+          <div class="index-contact-num">來電預約 07-6150933</div>
         </div>
         <img class="index-contact-img2" src="~assets/img/ui/copy.png" alt="">
       </a>
-      <a href="http://line.me/ti/p/~frank810729" target="_blank" class="index-contact-box">
+      <!-- http://line.me/ti/p/~frank810729 -->
+      <a href="https://lin.ee/vRXCyNF" target="_blank" class="index-contact-box">
         <div class="index-contact-inner">
           <img class="index-contact-img" src="~assets/img/ui/line.png" alt="">
-          <div class="index-contact-num">LineID</div>
+          <div class="index-contact-num">加入 LINE@ 官方帳號</div>
         </div>
         <img class="index-contact-img2" src="~assets/img/ui/leave.png" alt="">
       </a>

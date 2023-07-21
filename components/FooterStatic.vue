@@ -1,18 +1,18 @@
 <template>
   <div class="footer">
     <div class="footer-row">
-      <div class="footer-outer">
+      <a href="https://www.facebook.com/EDABMICenter" target="_blank" class="footer-outer">
         <img class="footer-icon" src="~assets/img/footer/fb.png" alt="">
-      </div>
-      <div class="footer-outer">
+      </a>
+      <a href="https://lin.ee/vRXCyNF" target="_blank" class="footer-outer">
         <img class="footer-icon" src="~assets/img/footer/line.png" alt="">
-      </div>
-      <div class="footer-outer">
+      </a>
+      <!-- <a href="" target="_blank" class="footer-outer">
         <img class="footer-icon" src="~assets/img/footer/yt.png" alt="">
-      </div>
-      <div class="footer-outer">
+      </a> -->
+      <a href="https://www.instagram.com/fitness.ours/" target="_blank" class="footer-outer">
         <img class="footer-icon" src="~assets/img/footer/ig.png" alt="">
-      </div>
+      </a>
     </div>
     <div class="footer-copyright">Copyright © 2020 Adobe. All rights reserved.</div>
   </div>
