@@ -239,9 +239,9 @@
           <div>
             <div class="index-case-way">
               <div class="index-case-way-head">減重方式</div>
-              <img v-if="currentCase.surgery" class="index-case-way-img" src="~assets/img/icon/surgery.png" alt="img">
-              <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/non-surgery.png" alt="img">
-              <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill2.png" alt="img">
+              <img v-if="currentCase.surgery" class="index-case-way-img" src="~assets/img/icon/shrink-stomach.png" alt="img">
+              <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/food-control.png" alt="img">
+              <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill.png" alt="img">
             </div>
             <div class="index-case-title">{{ currentCase.title }}</div>
             <div class="index-case-text" v-html="currentCase.text"></div>
@@ -379,9 +379,9 @@
           <div class="index-popup2-center">
             <div class="index-popup2-way">
               <div class="index-popup2-way-head">減重方式</div>
-              <img v-if="currentCase2.surgery" class="index-case-way-img" src="~assets/img/icon/surgery.png" alt="img">
-              <img v-if="currentCase2.nosurgery" class="index-case-way-img" src="~assets/img/icon/non-surgery.png" alt="img">
-              <img v-if="currentCase2.pill" class="index-case-way-img" src="~assets/img/icon/pill2.png" alt="img">
+              <img v-if="currentCase2.surgery" class="index-case-way-img" src="~assets/img/icon/shrink-stomach.png" alt="img">
+              <img v-if="currentCase2.nosurgery" class="index-case-way-img" src="~assets/img/icon/food-control.png" alt="img">
+              <img v-if="currentCase2.pill" class="index-case-way-img" src="~assets/img/icon/pill.png" alt="img">
             </div>
             <div class="index-popup2-head">{{ currentCase2.title }}</div>
             <div class="index-popup2-text" v-html="currentCase2.text"></div>
@@ -406,57 +406,49 @@
       <div class="index-popup3-outer">
         <img @click="isPopup3 = false" class="index-popup3-close" src="~assets/img/ui/close2.png" alt="">
         <div class="index-popup3-row">
-          <img class="index-popup3-icon" src="~assets/img/ui/knife.png" alt="">
+          <img class="index-popup3-icon" :src="`${useAsset(serviceData.icon)}`" alt="">
           <div>
-            <div class="index-popup3-head">減重手術</div>
-            <div class="index-popup3-sub">減重手術介紹</div>
+            <div class="index-popup3-head">{{ serviceData.head }}</div>
+            <div class="index-popup3-sub">{{ serviceData.head }}介紹</div>
           </div>
         </div>
 
-        <!-- 桌面版 -->
-        <div class="index-popup3-row2 index-popup3-desktop">
-          <div class="index-popup3-left">
-            <div class="index-popup3-title">袖狀胃切除手術</div>
-            <div class="index-popup3-hint">術後第一年，病人將可以減去他們多餘體重的40-70%。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。 利用減少胃容積及減少促食慾賀爾蒙(Ghrelin)的原理限制食量，達到減重效果。 袖狀胃切除術也是利用腹腔鏡進行，透過腹部五個或六個小的切口， 本中心的醫師將會使用高階攝像機（腹腔鏡）和多種專門的手術器械，來進行手術，一般術後約2-3天即可出院回家。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
-          </div>
-          <div class="index-popup3-right">
-            <div class="index-popup3-title">胃繞道手術</div>
-            <div class="index-popup3-hint">一年手術後，平均減去多餘體重的77％。 50％到60％的病人仍可以維持良好的減重效果。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。 利用減少胃容積及減少促食慾賀爾蒙(Ghrelin)的原理限制食量，達到減重效果。 袖狀胃切除術也是利用腹腔鏡進行，透過腹部五個或六個小的切口， 本中心的醫師將會使用高階攝像機（腹腔鏡）和多種專門的手術器械，來進行手術，一般術後約2-3天即可出院回家。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
-          </div>
+        <div class="index-popup3-select-box">
+          <el-select class="index-popup3-select" v-model="serviceSelect" placeholder="">
+            <el-option
+              v-for="item in serviceData.select"
+              :key="item.name"
+              :label="item.text"
+              :value="item.name">
+            </el-option>
+          </el-select>
         </div>
 
-        <!-- 手機版 -->
-        <div class="index-popup3-left index-popup3-rwd">
-          <div class="index-popup3-box">
-            <div @click="surgery(surgery1)" 
-              :class="['index-popup3-box-text',
-              {'index-popup3-box-select': currentSurgery != surgery1}]"
-            >{{ surgery1 }}</div>
-            <div @click="surgery(surgery2)" 
-              :class="['index-popup3-box-text',
-              {'index-popup3-box-select': currentSurgery != surgery2}]"
-            >{{ surgery2 }}</div>
+        <div class="index-popup3-inner">
+          <div class="index-popup3-surgery">
+            <img class="index-popup3-surgery-icon" :src="`${useAsset(serviceData.content[serviceSelectNum].icon)}`" alt="">
+            <div>
+              <div class="index-popup3-surgery-head">{{ serviceData.content[serviceSelectNum].title }}</div>
+              <div class="index-popup3-surgery-text">{{ serviceData.content[serviceSelectNum].sub }}</div>
+            </div>
           </div>
-          <div class="index-popup3-title">胃繞道手術</div>
-            <div class="index-popup3-hint">一年手術後，平均減去多餘體重的77％。 50％到60％的病人仍可以維持良好的減重效果。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。 利用減少胃容積及減少促食慾賀爾蒙(Ghrelin)的原理限制食量，達到減重效果。 袖狀胃切除術也是利用腹腔鏡進行，透過腹部五個或六個小的切口， 本中心的醫師將會使用高階攝像機（腹腔鏡）和多種專門的手術器械，來進行手術，一般術後約2-3天即可出院回家。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
-            <div class="index-popup3-text1">效果</div>
-            <div class="index-popup3-text2">移除約75%-80%的胃，留下一個窄胃〝管〞(袖狀胃)。</div>
+
+          <div class="index-popup3-desc">
+            <div class="index-popup3-head2">效果</div>
+            <div class="index-popup3-text2" v-html="serviceData.content[serviceSelectNum].effect"></div>
+            <div class="index-popup3-head2">優點</div>
+            <div class="index-popup3-text2" v-html="serviceData.content[serviceSelectNum].trait"></div>
+            <div class="index-popup3-head2">缺點</div>
+            <div class="index-popup3-text2" v-html="serviceData.content[serviceSelectNum].weakness"></div>
+          </div>
+
+          <div v-if="serviceData.content[serviceSelectNum].doctor" class="index-popup3-doctor">
+            <div>
+              <div class="index-popup3-doctor-head">醫師</div>
+              <div class="index-popup3-doctor-text">{{ serviceData.content[serviceSelectNum].doctor }}</div>
+            </div>
+            <img class="index-popup3-doctor-icon" :src="`${useAsset(serviceData.content[serviceSelectNum].doctorIcon)}`" alt="">
+          </div>
         </div>
 
       </div>
@@ -479,7 +471,6 @@ useHead({
     
   }
 })
-
 
 // 定時三秒，切換 current 數字換圖換字
 
@@ -824,19 +815,247 @@ function ill2(myName) {
 // popup3
 
 function popup3(item) {
-  isPopup3.value = true  
+  isPopup3.value = true
+  if(item == '減重手術'){
+    serviceData.value = surgeryData.value
+    serviceSelect.value = '袖狀胃切除手術'
+  } else if(item == '不開刀') {
+    serviceData.value = nifeData.value
+    serviceSelect.value = '內視鏡縮胃手術'
+  } else if(item == '內科治療') {
+    serviceData.value = pillData.value
+    serviceSelect.value = '羅氏纖｜羅鮮子'
+  }
 }
 
-const surgery1 = ref('三高袖狀胃切除手術')
-const surgery2 = ref('胃繞道手術')
-const currentSurgery = ref('三高袖狀胃切除手術')
+const serviceSelect = ref('')
+const serviceSelectNum = ref(0)
+const serviceData = ref({
+  head: '',
+  icon: '',
+  select: [
+    { name: '', text: '' },
+    { name: '', text: '' },
+  ],
+  content: [
+    {
+      title: '',
+      sub: '',
+      icon: '',
+      doctor: '',
+      doctorIcon: '',
+      effect: '',
+      trait: '',
+      weakness: ''
+    },
+  ]
+})
 
-function surgery(item) {
-  currentSurgery.value = item
-}
+watch(serviceSelect, (newValue, oldValue) => {
+  const index4 = serviceData.value.content.findIndex(item => item.title == newValue)
+  if(index4 == -1){
+    serviceSelectNum.value = 0
+  } else {
+    serviceSelectNum.value = index4
+  }
+  console.log(index4)
+  console.log(`count changed from ${oldValue} to ${newValue}`)
+})
+
+const surgeryData = ref({
+  head: '減重手術',
+  icon: 'img/ui/knife.png',
+  select: [
+    { name: '袖狀胃切除手術', text: '袖狀胃切除手術' },
+    { name: '胃繞道手術', text: '胃繞道手術' },
+  ],
+  content: [
+    {
+      title: '袖狀胃切除手術',
+      sub: '完成手術後的第一年，病人的體重可能會減少35-40%。',
+      icon: 'img/icon/cut.png',
+      doctor: '陳建翰',
+      doctorIcon: 'img/doctor/001.png',
+      effect: `
+      醫生會取走大約75%-80%的胃部，只留下一條細細的胃部，就像一個袖子一樣，所以我們稱它為袖狀胃切除術<br>
+
+      這個手術的主要目的是減少胃的容量和限制食量，同時也減少了能增加食慾的賀爾蒙，叫做飢餓素(Ghrelin)，因此能達到減肥的效果。<br>
+
+      這種手術是用腹腔鏡來進行的，醫生會在病人腹部切2-4個小傷口，然後使用高級的攝影鏡頭（腹腔鏡）和一些專門的手術工具來進行手術。<br>
+
+      這個手術在我們的中心進行，一般來說，病人在手術後大約2-3天就能出院，回到家中休養。
+      `,
+      trait: `超過75%的人在接受袖狀胃切除手術後，他們的肥胖相關的病症會有所改善。這些病症包括像是糖尿病、高血壓、阻塞性睡眠呼吸中止症，以及膽固醇異常等問題。`,
+      weakness: `
+      袖狀胃切除手術的風險比胃繞道手術來得低一些，也較不會出現像是潰瘍、腸阻塞、或是營養不良這類的問題。<br>
+
+      不過，它可能會增加胃食道逆流的風險, 因此仍然要定期追蹤。
+      `
+    },
+    {
+      title: '胃繞道手術',
+      sub: '完成手術後的第一年，病人的體重可能會減少35-40%。',
+      icon: 'img/icon/surround.png',
+      doctor: '陳忠延',
+      doctorIcon: 'img/doctor/002.png',
+      effect: `醫生會使用工具切割並縫合胃的上部，使其從下部分開，形成一個小胃囊。這個小袋子的功能就是限制食物的攝入量。接著，醫生會把這個小袋子連接到一段繞道的小腸上，這樣就能減少病人的卡路里和營養素的吸收。`,
+      trait: `除長期糖尿病控制稍佳外, 與袖狀胃切除手術相近。`,
+      weakness: `
+      繞道手術可能會導致鐵質不足引起的貧血，和骨質疏鬆症。<br>
+
+      有些人可能會因為維生素和礦物質不足，導致長期貧血、掉髮、頭暈、身體虛弱，或者是傷口無法正常癒合等問題。因此，手術後，病人需要長期服用綜合維他命，並且要定期追蹤。<br>
+
+      還有可能會有「傾倒症候群」的情況，這是因為太多的糖類食物或大量的食物從胃部迅速進入小腸造成的。這種情況可以藉由調整飲食習慣來預防。<br>
+
+      另外，有些人可能會出現「胃小腸吻合處潰瘍」，這可能會導致出血、胃部穿孔，甚至腹膜炎。為了減少潰瘍的發生，手術後患者需要完全避免抽煙，並且要小心使用消炎止痛藥。
+      `
+    },
+  ]
+})
+
+const nifeData = ref({
+  head: '不開刀',
+  icon: 'img/ui/heart.png',
+  select: [
+    { name: '內視鏡縮胃手術', text: '內視鏡縮胃手術' },
+    { name: '內視鏡胃內水球', text: '內視鏡胃內水球' },
+  ],
+  content: [
+    {
+      title: '內視鏡縮胃手術',
+      sub: '第一年你可以期望減掉 15～20％的體重',
+      icon: 'img/icon/shrink-stomach.png',
+      doctor: '陳建翰',
+      doctorIcon: 'img/doctor/001.png',
+      effect: `術後你可以在1-2天之內恢復正常生活。與其他更為侵入性的減重手術相比，風險較低`,
+      trait: `
+      １低飢餓感不易復胖<br>
+      ２短期及長期減重效果與胃繞道相當，減重效果比束帶佳<br>
+      ３傷口極小、疼痛度低、住院天數短<br>
+      ４腹腔鏡手術單切口，幾乎看不到傷口<br>
+      ５安全性較高、後遺症較低<br>
+      ６日後仍可進行胃鏡檢查<br>
+      ７不改變腸道吸收，較少營養吸收問題<br>
+      ８無異物植入問題<br>
+      ９無腸胃吻合，腸道接口潰瘍發生率更低
+      `,
+      weakness: `
+      健保不給付, 需要評估商業保險是否給付
+
+      須配合長期飲食控制方能達到最佳瘦身成果
+      `
+    },
+    {
+      title: '內視鏡胃內水球',
+      sub: '胃水球置入六個月後，平均能減少10-15%體重',
+      icon: 'img/icon/water-ball.png',
+      doctor: '鄭瑋霖',
+      doctorIcon: 'img/doctor/004.png',
+      effect: `
+      在胃部放一個的水球，藉由水球填充胃部，產生飽食感，以降低食物攝取量的方式來達到減重的效果
+      `,
+      trait: `血壓，血糖，血脂肪，肝功能和代謝症候群皆有明顯改善`,
+      weakness: `健保不給付, 需要評估商業保險是否給付`
+    },
+  ]
+})
+
+const pillData = ref({
+  head: '內科治療',
+  icon: 'img/ui/pin.png',
+  select: [
+    { name: '羅氏纖｜羅鮮子', text: '羅氏纖｜羅鮮子'},
+    { name: '善纖達｜瘦瘦筆', text: '善纖達｜瘦瘦筆' },
+    { name: '康纖芙', text: '康纖芙' },
+    { name: '12週飲食控制', text: '12週飲食控制' },
+  ],
+  content: [
+    {
+      title: '羅氏纖｜羅鮮子',
+      sub: '一年平均約 -2公斤（52週）',
+      icon: 'img/icon/pill.png',
+      doctor: '陳昱彰',
+      doctorIcon: 'img/doctor/003.png',
+      effect: `台灣食藥署目前核准上市，且已通過美國食品藥品監督管理局 (U.S. Food and Drug Administr a tion, FDA) 認可的減重藥物：<br>
+Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone hydrochloride /Bupropion hydrochloride (Contrave康纖芙®)。<br>
+
+羅氏鮮可以阻斷一餐中約30%的油脂吸收。`,
+      trait: `除了體重減輕，也有助於降低血壓、總膽固醇（TC) 及低密度脂蛋白(LDL)。`,
+      weakness: `可能影響脂溶性維生素（維生素 A、D、E、K、β 胡 蘿蔔素）的吸收，建議長期使用者可在服用羅氏鮮後至少2小時或睡前補充綜合維生素`
+    },
+    {
+      title: '善纖達｜瘦瘦筆',
+      sub: '一年平均約 -6公斤（52週）',
+      icon: 'img/icon/pill.png',
+      doctor: '',
+      doctorIcon: '',
+      effect: `
+      台灣食藥署目前核准上市，且已通過美國食品藥品監督管理局 (U.S. Food and Drug Administr a tion, FDA) 認可的減重藥物：<br>
+Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone hydrochloride /Bupropion hydrochloride (Contrave康纖芙®)。<br>
+
+透過藥物, 可以降低腸胃道蠕動速度, 使得患者食量變小,同時可以抑制大腦食慾, 藉此減重 
+      `,
+      trait: `皮下注射，一天一次，可在餐前或餐後使用，不限白天或晚上`,
+      weakness: `副作用包括噁心（39.3％）、腹瀉（20.9％）、便秘（19.4％）嘔吐（15.7％）、頭痛 （13.6％）等`
+    },
+    {
+      title: '康纖芙',
+      sub: '一年平均約 6~11%（52週）',
+      icon: 'img/icon/pill.png',
+      doctor: '',
+      doctorIcon: '',
+      effect: `
+      台灣食藥署目前核准上市，且已通過美國食品藥品監督管理局 (U.S. Food and Drug Administr a tion, FDA) 認可的減重藥物：<br>
+      Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone hydrochloride /Bupropion hydrochloride (Contrave康纖芙®)。<br>
+
+      透過藥物可以抑制大腦食慾, 藉此減重 
+      `,
+      trait: `口服, 一天1-2次`,
+      weakness: `副作用包括噁心（34.1％）、頭痛（23.8％）、便秘（24.1％）、嘔吐（11.0％）、眩暈 （14.6％）等`
+    },
+    {
+      title: '12週飲食控制',
+      sub: '一年平均約 5~10%',
+      icon: 'img/icon/food-control.png',
+      doctor: '鄭瑋霖',
+      doctorIcon: 'img/doctor/004.png',
+      effect: `
+      透過調整飲食的內容、吃飯的次數以及進食的速度，我們可以減少攝取的熱量，進而降低體重。<br>
+
+      飲食控制是減重的基礎，無論是藥物或手術，其主要的目的都是幫助我們更好地控制飲食。
+      `,
+      trait: `
+      自然, 不飢餓, <br>
+
+      只要飲食紀錄配合醫師及營養師指導調整飲食, 即可順利減重
+      `,
+      weakness: `無`
+    },
+  ]
+})
+
 
 
 </script>
+
+<style>
+
+.el-select .el-input__wrapper{
+  background-color: #772685;
+}
+
+
+.el-select .el-input__inner {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+}
+
+.el-icon svg {
+  color: white;
+}
+
+</style>
 
 <style lang="scss" scoped>
 
@@ -1107,8 +1326,7 @@ function surgery(item) {
     }
 
     &-btn-select {
-      background-color: #772685;
-      color: white;
+      
     }
 
     &-btn2 {
@@ -1143,15 +1361,15 @@ function surgery(item) {
       margin-bottom: 30px;
 
       &-head {
-        margin-right: 18px;
+        margin-right: 12px;
         font-size: 18px;
         font-weight: 700;
       }
 
       &-img {
-        width: 30px;
-        height: 30px;
-        margin-right: 12px;
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
       }
     }
 
@@ -1497,15 +1715,15 @@ function surgery(item) {
       margin-bottom: 20px;
 
       &-head {
-        margin-right: 18px;
+        margin-right: 12px;
         font-size: 18px;
         font-weight: 700;
       }
 
       &-img {
-        width: 30px;
-        height: 30px;
-        margin-right: 12px;
+        width: 40px;
+        height: 40px;
+        margin-right: 4px;
       }
     }
 
@@ -1591,43 +1809,83 @@ function surgery(item) {
       font-size: 12px;
     }
 
-    &-row2 {
-      margin-top: 22px;
+    &-select-box {
+      margin: 16px auto 0px;
+      text-align: center;
+    }
+
+    &-select {
+      max-width: 200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    &-inner {
+      position: relative;
+    }
+
+    &-surgery {
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+
+      &-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+      }
+
+      &-head {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      &-text {
+        margin-top: 10px;
+        color: #772685;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
     }
 
-    &-left {
-      width: 46%;
-      padding: 16px;
-      background-color: #FBFBFB;
+    &-desc {
+      margin-top: 40px;
     }
 
-    &-title {
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    &-hint {
-      margin-top: 8px;
-      color: #772685;
-    }
-
-    &-text1 {
-      margin-top: 24px;
+    &-head2 {
+      margin-top: 30px;
       font-weight: 700;
     }
 
     &-text2 {
-      margin-top: 8px;
-      color: #5C5757;
+      margin-top: 10px;
       line-height: 1.5;
+      color: #5C5757;
     }
 
-    &-right {
-      width: 46%;
-      padding: 16px;
-      color: #5C5757;
+    &-doctor {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: flex;
+      align-items: center;
+
+      &-head {
+        font-size: 10px;
+      }
+
+      &-text {
+        margin-top: 6px;
+        font-weight: 700;
+      }
+
+      &-icon {
+        margin-left: 30px;
+        width: 40px;
+        height: 40px;
+      }
+      
     }
     
   }
@@ -2156,56 +2414,69 @@ function surgery(item) {
       margin-top: 8px;
     }
 
-    &-row2 {
-      
+    &-select-box {
+      margin: 30px auto 0px;
     }
 
-    &-left {
-      width: 100%;
-      padding: 0px;
-      background-color: transparent;
+    &-select {
+      max-width: 100%;
     }
 
-    &-box {
-      display: flex;
+    &-inner {
+      overflow-y: scroll;
+      max-height: 64vh;
+    }
+
+    &-surgery {
+      margin-top: 30px;
+
+      &-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 14px;
+      }
+
+      &-head {
+        font-size: 16px;
+      }
+
+      &-text {
+        
+      }
+
+    }
+
+    &-desc {
+      margin-top: 34px;
+    }
+
+    &-head2 {
       margin-top: 24px;
-      border: 1px solid #C8B4F1;
-      border-radius: 4px;
-    }
-
-    &-box-text {
-      width: 50%;
-      height: 67px;
-      line-height: 67px;
-      text-align: center;
-      background-color: #772685;
-      color: white;
-    }
-
-    &-box-select {
-      color: #C8B4F1;
-      background-color: white;
-    }
-
-    &-title {
-      margin-top: 20px;
-      font-size: 16px;
-    }
-
-    &-hint {
-      margin-top: 8px;
-    }
-
-    &-text1 {
-      margin-top: 29px;
     }
 
     &-text2 {
-      
+      margin-top: 8px;
     }
 
-    &-right {
-      
+    &-doctor {
+      position: initial;
+      margin-top: 34px;
+      justify-content: space-between;
+
+      &-head {
+        font-size: 10px;
+      }
+
+      &-text {
+        font-size: 10px;
+        margin-top: 4px;
+      }
+
+      &-icon {
+        margin-left: 0px;
+        width: 40px;
+        height: 40px;
+      }
       
     }
     
