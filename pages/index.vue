@@ -213,31 +213,36 @@
           >三高</div>
           <div @click="ill('不孕症')" :class="['index-case-btn',
             {'index-case-btn-select': currentCase.name == '不孕症'}]">不孕症</div>
+            <div @click="ill('容貌焦慮')" :class="['index-case-btn',
+            {'index-case-btn-select': currentCase.name == '容貌焦慮'}]">容貌焦慮</div>
           <div @click="ill('心肌梗塞')" :class="['index-case-btn',
             {'index-case-btn-select': currentCase.name == '心肌梗塞'}]">心肌梗塞</div>
           <div @click="ill('衣服選擇障礙')" :class="['index-case-btn',
             {'index-case-btn-select': currentCase.name == '衣服選擇障礙'}]">衣服選擇障礙</div>
-          <div @click="ill('改變身形')" :class="['index-case-btn',
-            {'index-case-btn-select': currentCase.name == '改變身形'}]">改變身形</div>
-
+          <div @click="ill('身形改變')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '身形改變'}]">身形改變</div>
           <div @click="ill('肝指數異常')" :class="['index-case-btn index-case-rwd',
             {'index-case-btn-select': currentCase.name == '肝指數異常'}]">肝指數異常</div>
-          <div @click="ill('容貌焦慮')" :class="['index-case-btn index-case-rwd',
-            {'index-case-btn-select': currentCase.name == '容貌焦慮'}]">容貌焦慮</div>
           <div @click="ill('缺乏自信')" :class="['index-case-btn index-case-rwd',
             {'index-case-btn-select': currentCase.name == '缺乏自信'}]">缺乏自信</div>
-          <div @click="ill('高血壓＆呼吸中止')" :class="['index-case-btn index-case-rwd',
-            {'index-case-btn-select': currentCase.name == '高血壓＆呼吸中止'}]">高血壓＆呼吸中止</div>
-          <div @click="ill('高血壓、自體免疫系統疾病、睡覺打鼾')"
+          <div @click="ill('呼吸中止')" :class="['index-case-btn index-case-rwd',
+            {'index-case-btn-select': currentCase.name == '呼吸中止'}]">呼吸中止</div>
+          <div @click="ill('高血壓、自體免疫系統')"
            :class="['index-case-btn index-case-btn3 index-case-rwd',
-            {'index-case-btn-select': currentCase.name == '高血壓、自體免疫系統疾病、睡覺打鼾'}]"
-           >高血壓、自體免疫系統疾病、睡覺打鼾</div>
+            {'index-case-btn-select': currentCase.name == '高血壓、自體免疫系統'}]"
+           >高血壓、自體免疫系統</div>
           <div @click="ill('關節疼痛與壓迫')" :class="['index-case-btn index-case-rwd',
             {'index-case-btn-select': currentCase.name == '關節疼痛與壓迫'}]">關節疼痛與壓迫</div>
           <div @click="popup2('close')" class="index-case-btn2">更多</div>
         </div>
         <div class="index-case-row3">
           <div>
+            <div class="index-case-way">
+              <div class="index-case-way-head">減重方式</div>
+              <img v-if="currentCase.surgery" class="index-case-way-img" src="~assets/img/icon/surgery.png" alt="img">
+              <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/non-surgery.png" alt="img">
+              <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill2.png" alt="img">
+            </div>
             <div class="index-case-title">{{ currentCase.title }}</div>
             <div class="index-case-text" v-html="currentCase.text"></div>
           </div>
@@ -245,12 +250,12 @@
           <img v-if="currentCase.name == '不孕症'" class="index-case-photo" src="~assets/img/case/2pregnant.jpg" alt="">
           <img v-if="currentCase.name == '心肌梗塞'" class="index-case-photo" src="~assets/img/case/3heart.jpg" alt="">
           <img v-if="currentCase.name == '衣服選擇障礙'" class="index-case-photo" src="~assets/img/case/4clothe.jpg" alt="">
-          <img v-if="currentCase.name == '改變身形'" class="index-case-photo" src="~assets/img/case/5body.jpg" alt="">
+          <img v-if="currentCase.name == '身形改變'" class="index-case-photo" src="~assets/img/case/5body.jpg" alt="">
           <img v-if="currentCase.name == '肝指數異常'" class="index-case-photo" src="~assets/img/case/6liver.png" alt="">
           <img v-if="currentCase.name == '容貌焦慮'" class="index-case-photo" src="~assets/img/case/7face.jpg" alt="">
           <img v-if="currentCase.name == '缺乏自信'" class="index-case-photo" src="~assets/img/case/8confident.jpg" alt="">
-          <img v-if="currentCase.name == '高血壓＆呼吸中止'" class="index-case-photo" src="~assets/img/case/9press.jpg" alt="">
-          <img v-if="currentCase.name == '高血壓、自體免疫系統疾病、睡覺打鼾'" class="index-case-photo" src="~assets/img/case/10sleep.png" alt="">
+          <img v-if="currentCase.name == '呼吸中止'" class="index-case-photo" src="~assets/img/case/9press.jpg" alt="">
+          <img v-if="currentCase.name == '高血壓、自體免疫系統'" class="index-case-photo" src="~assets/img/case/10sleep.png" alt="">
           <img v-if="currentCase.name == '關節疼痛與壓迫'" class="index-case-photo" src="~assets/img/case/11press.jpg" alt="">
         </div>
       </div>
@@ -342,35 +347,42 @@
             <div @click="ill2('不孕症')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '不孕症'}]"
             >不孕症</div>
+            <div @click="ill2('容貌焦慮')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '容貌焦慮'}]"
+            >容貌焦慮</div>
             <div @click="ill2('心肌梗塞')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '心肌梗塞'}]"
             >心肌梗塞</div>
             <div @click="ill2('衣服選擇障礙')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '衣服選擇障礙'}]"
             >衣服選擇障礙</div>
-            <div @click="ill2('改變身形')" :class="['index-popup2-item',
-            {'index-popup2-item-select': currentCase2.name == '改變身形'}]"
-            >改變身形</div>
+            <div @click="ill2('身形改變')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '身形改變'}]"
+            >身形改變</div>
             <div @click="ill2('肝指數異常')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '肝指數異常'}]"
             >肝指數異常</div>
-            <div @click="ill2('容貌焦慮')" :class="['index-popup2-item',
-            {'index-popup2-item-select': currentCase2.name == '容貌焦慮'}]"
-            >容貌焦慮</div>
+            
             <div @click="ill2('缺乏自信')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '缺乏自信'}]"
             >缺乏自信</div>
-            <div @click="ill2('高血壓＆呼吸中止')" :class="['index-popup2-item',
-            {'index-popup2-item-select': currentCase2.name == '高血壓＆呼吸中止'}]"
-            >高血壓＆呼吸中止</div>
-            <div @click="ill2('高血壓、自體免疫系統疾病、睡覺打鼾')" :class="['index-popup2-item',
-            {'index-popup2-item-select': currentCase2.name == '高血壓、自體免疫系統疾病、睡覺打鼾'}]"
-            >高血壓、自體免疫系統疾病、睡覺打鼾</div>
+            <div @click="ill2('呼吸中止')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '呼吸中止'}]"
+            >呼吸中止</div>
+            <div @click="ill2('高血壓、自體免疫系統')" :class="['index-popup2-item',
+            {'index-popup2-item-select': currentCase2.name == '高血壓、自體免疫系統'}]"
+            >高血壓、自體免疫系統</div>
             <div @click="ill2('關節疼痛與壓迫')" :class="['index-popup2-item',
             {'index-popup2-item-select': currentCase2.name == '關節疼痛與壓迫'}]"
             >關節疼痛與壓迫</div>
           </div>
           <div class="index-popup2-center">
+            <div class="index-popup2-way">
+              <div class="index-popup2-way-head">減重方式</div>
+              <img v-if="currentCase2.surgery" class="index-case-way-img" src="~assets/img/icon/surgery.png" alt="img">
+              <img v-if="currentCase2.nosurgery" class="index-case-way-img" src="~assets/img/icon/non-surgery.png" alt="img">
+              <img v-if="currentCase2.pill" class="index-case-way-img" src="~assets/img/icon/pill2.png" alt="img">
+            </div>
             <div class="index-popup2-head">{{ currentCase2.title }}</div>
             <div class="index-popup2-text" v-html="currentCase2.text"></div>
           </div>
@@ -378,12 +390,12 @@
           <img v-if="currentCase2.name == '不孕症'" class="index-popup2-photo" src="~assets/img/case/2pregnant.jpg" alt="">
           <img v-if="currentCase2.name == '心肌梗塞'" class="index-popup2-photo" src="~assets/img/case/3heart.jpg" alt="">
           <img v-if="currentCase2.name == '衣服選擇障礙'" class="index-popup2-photo" src="~assets/img/case/4clothe.jpg" alt="">
-          <img v-if="currentCase2.name == '改變身形'" class="index-popup2-photo" src="~assets/img/case/5body.jpg" alt="">
+          <img v-if="currentCase2.name == '身形改變'" class="index-popup2-photo" src="~assets/img/case/5body.jpg" alt="">
           <img v-if="currentCase2.name == '肝指數異常'" class="index-popup2-photo" src="~assets/img/case/6liver.png" alt="">
           <img v-if="currentCase2.name == '容貌焦慮'" class="index-popup2-photo" src="~assets/img/case/7face.jpg" alt="">
           <img v-if="currentCase2.name == '缺乏自信'" class="index-popup2-photo" src="~assets/img/case/8confident.jpg" alt="">
-          <img v-if="currentCase2.name == '高血壓＆呼吸中止'" class="index-popup2-photo" src="~assets/img/case/9press.jpg" alt="">
-          <img v-if="currentCase2.name == '高血壓、自體免疫系統疾病、睡覺打鼾'" class="index-popup2-photo" src="~assets/img/case/10sleep.png" alt="">
+          <img v-if="currentCase2.name == '呼吸中止'" class="index-popup2-photo" src="~assets/img/case/9press.jpg" alt="">
+          <img v-if="currentCase2.name == '高血壓、自體免疫系統'" class="index-popup2-photo" src="~assets/img/case/10sleep.png" alt="">
           <img v-if="currentCase2.name == '關節疼痛與壓迫'" class="index-popup2-photo" src="~assets/img/case/11press.jpg" alt="">
 
         </div>
@@ -607,99 +619,41 @@ function popup1(myName) {
   popup1Value.value = popup1Data.value[index3]
 }
 
-const currentCase = ref({ name: '', title: '', text: '' })
+const currentCase = ref({ name: '', title: '', text: '', surgery: false, nosurgery: false, pill: false })
 
 const caseAll = ref([
   { name: '三高', title: '手術一年，從127到84公斤', text: `
-  我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
-  腰圍從46變36（瘦了一大圈）<br>
-  走路輕盈地像要飛起來一樣<br><br>
-
-  很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。<br>
-  我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
-
-  手術後三個月內是身體的#恢復期<br>
-  有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
-
-  重獲自信心，但別再問我這些問題<br>
-  「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！<br>
-  我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，有你們真好，超愛你們
-  ` },
+   我的姪女都成功減50公斤，對我產生相當大的影響也想去嘗試<br>
+ 腰圍從46變36（瘦了一大圈）<br>
+ 走路輕盈地像要飛起來一樣<br><br>
+▌很慶幸自己做了這個決定，是我人生重大的一個轉捩點：這個決定我思考了三年。<br>
+我本身有著三高問題加上年紀50，因為疫情的關係讓我更感覺健康的重要，也告訴自己：「啥美食我都吃過了，是時候為自己身體控制嘴、控制食慾了。」<br><br>
+▌手術後三個月內是身體的 #恢復期<br>
+有身體和胃都不太舒服的時候，不過義大的主治醫師團隊從生理、心理、營養各方面的細心指導，讓整個過程很舒坦，體重也如預期的漸漸降下來，很感謝自己當初最的決定！<br><br>
+▌重獲自信心，但別再問我這些問題<br>
+「我是怎麼瘦下來的，」每每解釋又是好長的故事，現在我會說「管住嘴，邁開腿，找個好團隊」，就這麼簡單！<br>
+我有個員工43公斤也說要減肥，可見每個人都想瘦，我知道，所以很感謝義大的醫療團隊，就像是給我一個新的人生，是給我一個新的人生，有你們真好，超愛你們。
+  `, surgery: true, nosurgery: true, pill: false },
   { name: '不孕症', title: '老公我懷孕了！而且是#自然受孕', text: `
+
 「你不要騙我。」老公說我們夫妻盼了11年多年不孕、就連試管做卵一直長不大而崩潰大哭的我來說，竟然自然受孕了？<br><br>
 
-這是真的！<br><br>
+▌這是真的！<br>
+
 要不是因為我脖子長了一顆11公分腫瘤而去看診，跟醫生聊到我不孕，現在回想起來，那時的我本來就在高血壓跟糖尿病邊緣（體重90公斤），陳醫生當時不但沒安慰我，還直接說「這麼胖怎麼可能懷孕！」真是好生氣<br><br>
 
-我只想受孕，也得到健康<br><br>
-卻也是他，讓我鏟肉－25公斤，而且後來有女長輩見到我，竟然當我跟老公的面前說：「妳前妻去那裡？」<br>
+▌我只想受孕，也得到健康<br>
 
-我聽了哭笑不得，長輩竟然以為我先生再娶！這些回想起來，或是回到門診時，看到不孕症的媽媽們還是覺得心酸酸的<br>
+卻也是他，讓我鏟肉 －25公斤，而且後來有女長輩見到我，竟然當我跟老公的面前說：「妳前妻去那裡？」 我聽了哭笑不得，長輩竟然以為我先生再娶！這些回想起來，或是回到門診時，看到不孕症的媽媽們還是覺得心酸酸的<br>
+
 陳醫師說我是他當主任得第一個開刀縮胃的病人，有這樣的緣分真的感謝他，他讓我有一起成長的寶寶，謝謝強大的減重團隊。<br>
+
 現在我的小孩9個月大了，每次看到直話直說的陳建翰醫生心都暖暖的。
-  ` },
-  { name: '心肌梗塞', title: '從鬼門關前救回來的人生', text: `
-  你懂得，出社會之後工作繁忙，三餐隨便吃下班也要宵夜喝啤酒跟朋友聚會，一直都覺得自己有本錢，直到那一天⋯⋯<br><br>
-
-兩年前的九月，體重三位數的我發生致命的#急性心肌梗塞<br><br>
-那個痛感、痛苦、到讓我瞬間眼前一片漆黑，只能癱倒在床上直冒冷汗半個小時，或許是我的主耶穌聽到我的命危前夕的微弱禱告，讓我尚存的力氣能自己趕往醫院救命...<br>
-
-#心肌梗塞 之後我的心臟機能大幅度衰弱，再拖著三位數的體重，只要走個路、爬個梯都會讓我覺得隨時快要斷氣，真的讓我覺得，原來我的人生已是窮途末路<br><br>
-
-回想婚後的#幸福肥到BMI跌破眼鏡<br><br>
-日常生活總是常會心想多吃喝，我覺得工作的繁忙可以消耗掉熱量，況且沒多吃一點工作沒體力...總之就是在飲食上沒在節制的<br>
-雖然過往也有嘗試過斷食，運動，節食，甚至吃很貴的自費減肥藥，都是希望越大，失望更大...有次到義大心臟內科回診，批價收據上看到#義大減重中心，我心想：「再給自己一次機會！」<br><br>
-
-陳醫師嚴謹的檢查流程，制定快狠準的治療方式<br><br>
-
-連手術日期也是快速的敲定，「你不能再拖了，」陳醫師說；整個手術過程又快又無感，竟然隔一個晚上就能出院？<br>
-
-即使手術返家了，減重中心對我的恢復狀況、配套飲食計畫都追蹤很仔細，營養師說術後的飲食非常重要，因為術後就是「身體擁有全新消化系統」，營養師規劃恢復飲食的計畫對我助益良多<br>
-
-一年過去我減掉了３６公斤，隔了十年我再次回到學生時代的體重，體檢結果也不再滿江紅，健康體態跟精神又回來了真的很感謝陳醫師及減重服務團隊讓我的健康人生又回來了！「老婆，我回來了！」
-  ` },
-  { name: '衣服選擇障礙', title: '想到社會對肥胖者的目光，我更不後悔讓自己變美', text: `
-  將近破百的重量，現在只有64！<br><br>
-術前的我將近100公斤，要有合適好看的衣服真的很困難，街上看到好看的服飾店連踏進去的勇氣都沒有，出門也要擔心別人的目光，感覺自己是人群中的異類，更因為身材的關係遭到同儕嘲笑、霸凌<br><br>
-
-術後八個月，我的體重下降到65公斤<br><br>
-
-雖然還是肉肉的，但是能穿下更精緻更好看的衣服，身材的改變帶給我更多的自信，開始化妝和學習穿撘，變成享受別人驚訝的目光：「欸你是不是又變瘦了」、「變漂亮了認不出來餒」<br><br>
-
-聽到這些話，就讓我更堅定想要變瘦變漂亮的心！<br><br>
-
-最近看到那些身材豐腴的人，仍不免想到一年前的我也是這樣的，看到社會對待肥胖者的目光，讓我慶幸我選擇了開刀這條路，很感謝支持我的家人，還有我的主治醫師和營養師，讓我過上更自信的生活<br><br>
-
-你也可以！
-  ` },
-  { name: '改變身形', title: '想要－60 kg一定得付出，長期做得到就是我不再胖的原因', text: `
-  「手術後經過九個多月，一開始身形改變不少也比以前更健康，看前自己的照片跟現在，簡直是兩個不一樣的人！一開始會害怕做手術會不會很痛，但想改變一定得付出。」<br><br>
-
-愛喝飲料 → 找到替代品<br><br>
-
-減重就只能喝水嗎？不，這裡的營養師幫我找到解饞的替代品，或許不是多數人能接受的，但我卻很愛！我可以長期遵守的方法，就是好方法<br><br>
-
-現在的我對美食也有了「克制能力」<br><br>
-
-除了自制力，選擇食物很重要，我覺得最重要的還是了解自己的自制力底線吧，當自己身邊的人在吃＃鹹酥雞、＃泡麵這些很香的食物也要能克制自己不去吃，我竟然能做到了！<br><br>
-
-選擇食物真的很重要，如果已經付出麼多的努力了，再回到過去吃錯誤的食物的話，一切就白費了吧！所以能讓自己維持飲食的方法，不妨多嘗試！
-  ` },
-  { name: '肝指數異常', title: '每次在診間外我都很懷疑，我真的可以成功嗎？', text: `
-  結果我做到了！-32kg 我是Miss. K<br><br>
-
-在生完小孩以後不碰體重計10多年，也不喜歡拍照，全家ㄧ起拍的照片是寥寥可數<br><br>
-
-當然這期間我也嘗試了很多減重方式，很顯然的效果都不理想，直到我自己的肝指數破百、身體出現毛病後，我才在朋友的介紹下找到陳主任幫忙。<br><br>
-
-每次坐在外面的沙發看著診間播放的影片，也曾懷疑「我真的能成功嗎？」逐漸看到自己的進步之後，現在又開始喜歡拍照了，希望可以留下美美的回憶，都要感謝陳主任所帶領的專業團隊！<br>
-
-減重中心的團隊當然專業，卻也是非常親切好聊天和溝通的那種，加上#營養師適時的糾正我的飲食習慣，整體來說讓我除了能有好的體態外，更能獲得健康
-  ` },
+  `, surgery: true, nosurgery: true, pill: false },
   { name: '容貌焦慮', title: '原來不後悔是真的，新的人生也是真的', text: `
   最應該要謝謝的是我決定從台南跑來高雄的那一刻，謝謝陳主任沒有給我退縮的機會<br><br>
 
-手術前一天，我帶著同事們的祝福踏進病房<br><br>
+▌手術前一天，我帶著同事們的祝福踏進病房<br><br>
 
 晚上陳醫師來病房看我：不用緊張！明天手術後醒來，你要迎接的是你新的人生；然後，我正式踏上醫生所謂「新的人生」<br>
 
@@ -709,29 +663,84 @@ const caseAll = ref([
 「真後悔！太晚來做手術了」<br>
 「衣服都能穿得下怎麼可能不開心」<br>
 「瘦下來以後桃花常常來敲門」
-  ` },
-  { name: '缺乏自信', title: '謝謝自己一直努力，讓我重生', text: `
-  手術後３天我就能上班了！不可思議<br><br>
+  `, surgery: true, nosurgery: false, pill: true },
+  { name: '心肌梗塞', title: '從鬼門關前救回來的人生', text: `
+  你懂得，出社會之後工作繁忙，三餐隨便吃下班也要宵夜喝啤酒跟朋友聚會，一直都覺得自己有本錢，直到那一天⋯⋯<br><br>
 
-最初諮詢時，拖著上百公斤的身體、一邊顫抖跟陳醫生確認，是不是一百分的努力，就會有一百分的成果呢？因為陳醫師充滿信心的眼神，我選擇手術，有勇氣，就行動！<br><br>
+▌兩年前的九月，體重三位數的我發生致命的#急性心肌梗塞<br><br>
+那個痛感、痛苦、到讓我瞬間眼前一片漆黑，只能癱倒在床上直冒冷汗半個小時，或許是我的主耶穌聽到我的命危前夕的微弱禱告，讓我尚存的力氣能自己趕往醫院救命...<br>
 
-手術後２週<br><br>
-每天先喝些湯湯水水就很有飽足感，我心想這樣也省下不少餐費；一邊慢慢練習進食量，不知不覺就一掃過去不好的習慣：向亂吃一通 say good-bye<br>
-對了對了，中心團隊與醫生不斷的提醒與關心：「慢、慢、進、食」真的讓我#胃食道逆流再也沒有出現過，體重也降到９Ｘ→８Ｘ開頭，再加上開始運動，就來到７字頭，每次量體重都嚇一跳！<br><br>
+#心肌梗塞 之後我的心臟機能大幅度衰弱，再拖著三位數的體重，只要走個路、爬個梯都會讓我覺得隨時快要斷氣，真的讓我覺得，原來我的人生已是窮途末路<br><br>
 
-以為這是一場夢<br><br>
-還是常常照鏡子、深怕醒來之後肥肉再度回來，但現在路人甲乙丙根本認不出來我是誰的驚喜感，甚至開始誇獎、稱讚我的勇氣，想想當初怎麼考慮那麼久都不行動呢？辛苦我的身體多壓了那麼重的肥肉這麼久<br><br>
+▌回想婚後的#幸福肥到BMI跌破眼鏡<br><br>
+日常生活總是常會心想多吃喝，我覺得工作的繁忙可以消耗掉熱量，況且沒多吃一點工作沒體力...總之就是在飲食上沒在節制的<br>
+雖然過往也有嘗試過斷食，運動，節食，甚至吃很貴的自費減肥藥，都是希望越大，失望更大...有次到義大心臟內科回診，批價收據上看到#義大減重中心，我心想：「再給自己一次機會！」<br><br>
 
-減重是一輩子的課題<br><br>
+▌陳醫師嚴謹的檢查流程，制定快狠準的治療方式<br><br>
 
-陳醫生曾跟我說過「不要因為瘦下來嘴巴就不控制，這樣真的只會是夢」，身材體態要維持不是醫生說了算，也不是用「説」的，而是努力實踐，好好的照顧身體；我不後悔自己選擇切胃，我對自己選擇感到驕傲！這是最適合我的減重方式了<br>
-美美的人生，我、來、了
-  ` },
-  { name: '高血壓＆呼吸中止', title: '當體重156公斤會發生什麼事？', text: `
+連手術日期也是快速的敲定，「你不能再拖了，」陳醫師說；整個手術過程又快又無感，竟然隔一個晚上就能出院？<br>
+
+即使手術返家了，減重中心對我的恢復狀況、配套飲食計畫都追蹤很仔細，營養師說術後的飲食非常重要，因為術後就是「身體擁有全新消化系統」，營養師規劃恢復飲食的計畫對我助益良多<br>
+
+一年過去我減掉了３６公斤，隔了十年我再次回到學生時代的體重，體檢結果也不再滿江紅，健康體態跟精神又回來了真的很感謝陳醫師及減重服務團隊讓我的健康人生又回來了！「老婆，我回來了！」
+  `, surgery: true, nosurgery: true, pill: false },
+  { name: '身形改變', title: '想要－60 kg一定得付出，長期做得到就是我不再胖的原因', text: `
+  「手術後經過九個多月，一開始身形改變不少也比以前更健康，看前自己的照片跟現在，簡直是兩個不一樣的人！一開始會害怕做手術會不會很痛，但想改變一定得付出。」<br><br>
+
+▌愛喝飲料 → 找到替代品<br><br>
+
+減重就只能喝水嗎？不，這裡的營養師幫我找到解饞的替代品，或許不是多數人能接受的，但我卻很愛！我可以長期遵守的方法，就是好方法<br><br>
+
+▌現在的我對美食也有了「克制能力」<br><br>
+
+除了自制力，選擇食物很重要，我覺得最重要的還是了解自己的自制力底線吧，當自己身邊的人在吃＃鹹酥雞、＃泡麵這些很香的食物也要能克制自己不去吃，我竟然能做到了！<br><br>
+
+選擇食物真的很重要，如果已經付出麼多的努力了，再回到過去吃錯誤的食物的話，一切就白費了吧！所以能讓自己維持飲食的方法，不妨多嘗試！
+  `, surgery: true, nosurgery: false, pill: false },
+  { name: '肝指數異常', title: '每次在診間外我都很懷疑，我真的可以成功嗎？', text: `
+  結果我做到了！-32kg 我是Miss. K<br><br>
+
+▌在生完小孩以後不碰體重計10多年，也不喜歡拍照，全家ㄧ起拍的照片是寥寥可數<br><br>
+
+當然這期間我也嘗試了很多減重方式，很顯然的效果都不理想，直到我自己的肝指數破百、身體出現毛病後，我才在朋友的介紹下找到陳主任幫忙。<br><br>
+
+▌每次坐在外面的沙發看著診間播放的影片，也曾懷疑「我真的能成功嗎？」逐漸看到自己的進步之後，現在又開始喜歡拍照了，希望可以留下美美的回憶，都要感謝陳主任所帶領的專業團隊！<br>
+
+減重中心的團隊當然專業，卻也是非常親切好聊天和溝通的那種，加上#營養師適時的糾正我的飲食習慣，整體來說讓我除了能有好的體態外，更能獲得健康
+  `, surgery: true, nosurgery: true, pill: false },
+  { name: '衣服選擇障礙', title: '想到社會對肥胖者的目光，我更不後悔讓自己變美', text: `
+  將近破百的重量，現在只有64！<br><br>
+術前的我將近100公斤，要有合適好看的衣服真的很困難，街上看到好看的服飾店連踏進去的勇氣都沒有，出門也要擔心別人的目光，感覺自己是人群中的異類，更因為身材的關係遭到同儕嘲笑、霸凌<br><br>
+
+▌術後八個月，我的體重下降到65公斤<br><br>
+
+雖然還是肉肉的，但是能穿下更精緻更好看的衣服，身材的改變帶給我更多的自信，開始化妝和學習穿撘，變成享受別人驚訝的目光：「欸你是不是又變瘦了」、「變漂亮了認不出來餒」<br><br>
+
+聽到這些話，就讓我更堅定想要變瘦變漂亮的心！<br><br>
+
+最近看到那些身材豐腴的人，仍不免想到一年前的我也是這樣的，看到社會對待肥胖者的目光，讓我慶幸我選擇了開刀這條路，很感謝支持我的家人，還有我的主治醫師和營養師，讓我過上更自信的生活<br><br>
+
+你也可以！
+  `, surgery: true, nosurgery: true, pill: false },
+    { name: '關節疼痛與壓迫', title: '我用2年的時間，找到成功的方法', text: `
+  38歲前，我認為只要我愛動，就算胖一點又怎樣；38歲之後我仍愛運動，身體卻告訴我『我沒有辦法了』。膝蓋、腳裸、脊椎，明顯的讓我不時須停下腳步...<br><br>
+
+「原來我該找對方法，一次瘦下來。」<br><br>
+
+▌術後的我，在球場上變得更靈活<br><br>
+慢跑的公里數增加，速度也加快；泳池裡就更別說了，跟個人魚公主一樣！那天我穿上L號的洋裝，看著鏡子驚訝「這真的是我嗎？」一輩子都沒看過那麼漂亮的我，原來我也可以這樣漂亮！<br><br>
+
+雖然我是一名社工，不需靠門面爭取業績，但站上舞台的我仍需要自信與魅力！我的自信是否因為變瘦而來我不知道，但我很確定「我沒辦法將視線移開鏡子裡的我!!」真實的心情！！謝謝你們！！<br><br>
+
+▌他是個特別的醫生，非常獨特的個人風格<br><br>
+
+主任的「帥」就不用強調了，專業更是無可挑剔，針對個案的需求，給予「合理的」要求，無論是在營養品的選擇或術後無厘頭的嘴饞壓力，他都給出最好的建議；術前衛教跟術後追蹤都讓我覺得貼心，非常信任的把我的健康交給他
+  `, surgery: true, nosurgery: true, pill: false },
+  { name: '呼吸中止', title: '當體重156公斤會發生什麼事？', text: `
   
 「我連坐著也呼吸不到空氣，根本不想起身走路」<br><br>
 
-那段時間我最在意的，都是外人看不見的<br><br>
+▌那段時間我最在意的，都是外人看不見的<br><br>
 
 血壓180、200很長一段時間<br>
 平均每晚暫停60次呼吸（必須吃安眠藥、鎮靜止痛藥）<br><br>
@@ -739,7 +748,7 @@ const caseAll = ref([
 總是依賴侄子照顧<br>
 呼吸器治療費用20萬元<br><br>
 
-當我遇見#鄭瑋霖醫師，一切都不一樣了<br><br>
+▌當我遇見#鄭瑋霖醫師，一切都不一樣了<br><br>
 
 －12堂的飲食調整，除了學會知識，也對生活更加有感，不再厭世<br>
 －每週一次重訓１小時＋有氧半小時<br>
@@ -750,18 +759,18 @@ const caseAll = ref([
 侄子現在跟著我是一起運動、注意飲食和健康<br>
 我不再吃安眠藥，也不會半夜醒來、輾轉難眠
 
-  ` },
-  { name: '高血壓、自體免疫系統疾病、睡覺打鼾', title: '90公斤媽媽瘦身歷險！半年後鄰居：妳是誰？', text: `
+  `, surgery: false, nosurgery: true, pill: false },
+  { name: '高血壓、自體免疫系統', title: '90公斤媽媽瘦身歷險！半年後鄰居：妳是誰？', text: `
   
   從小我的志願就是當老師，可是自從結婚當了媽媽之後，我的志願卻變成「瘦身」<br><br>
 
-生完二個baby後我的體重就不能再回到從前<br><br>
+▌生完二個baby後我的體重就不能再回到從前<br><br>
 
 從60、70、80、90到了我人生的體重癲峰，然後什麼病通通都來了：高血壓、自體免疫系統疾病、睡覺打鼾（兒子說一樓就能聽到媽媽在三樓的打鼾聲），而且走路、爬樓梯上氣不接下氣，糖化血色素也接近臨界值<br><br>
 
-掙扎一段時間終於鼓起勇氣去義大減重中心掛了門診，心裡難免忐忑不安，但在陳建翰主任的專業說明與分析每種手術的優缺點及風險，做了#胃袖狀切除手術<br><br>
+▌掙扎一段時間終於鼓起勇氣去義大減重中心掛了門診，心裡難免忐忑不安，但在陳建翰主任的專業說明與分析每種手術的優缺點及風險，做了#胃袖狀切除手術<br><br>
 
-經過半年我瘦了35公斤!!!!<br><br>
+▌經過半年我瘦了35公斤!!!!<br><br>
 
 術後當然飲食、運動是最重要的２個瘦下來的因素，更要感謝每次回診時：<br>
 １主任的勉勵<br>
@@ -770,21 +779,24 @@ const caseAll = ref([
 
 不管是外表跟身體的健康整個不一樣，簡直蛻變成另外一個人，連附近的店家也認不出我是誰！即使我已經到了知天命的年齡，還能有這樣的身材真的是我夢寐以求現在連睡覺也會笑真的是太美好了
 
-  ` },
-  { name: '關節疼痛與壓迫', title: '我用2年的時間，找到成功的方法', text: `
-  38歲前，我認為只要我愛動，就算胖一點又怎樣；38歲之後我仍愛運動，身體卻告訴我『我沒有辦法了』。膝蓋、腳裸、脊椎，明顯的讓我不時須停下腳步...<br><br>
+  `, surgery: true, nosurgery: false, pill: false },
+  { name: '缺乏自信', title: '謝謝自己一直努力，讓我重生', text: `
+  手術後３天我就能上班了！不可思議<br><br>
 
-「原來我該找對方法，一次瘦下來。」<br><br>
+▌最初諮詢時，拖著上百公斤的身體、一邊顫抖跟陳醫生確認，是不是一百分的努力，就會有一百分的成果呢？因為陳醫師充滿信心的眼神，我選擇手術，有勇氣，就行動！<br><br>
 
-術後的我，在球場上變得更靈活<br><br>
-慢跑的公里數增加，速度也加快；泳池裡就更別說了，跟個人魚公主一樣！那天我穿上L號的洋裝，看著鏡子驚訝「這真的是我嗎？」一輩子都沒看過那麼漂亮的我，原來我也可以這樣漂亮！<br><br>
+▌手術後２週<br><br>
+每天先喝些湯湯水水就很有飽足感，我心想這樣也省下不少餐費；一邊慢慢練習進食量，不知不覺就一掃過去不好的習慣：向亂吃一通 say good-bye<br>
+對了對了，中心團隊與醫生不斷的提醒與關心：「慢、慢、進、食」真的讓我#胃食道逆流再也沒有出現過，體重也降到９Ｘ→８Ｘ開頭，再加上開始運動，就來到７字頭，每次量體重都嚇一跳！<br><br>
 
-雖然我是一名社工，不需靠門面爭取業績，但站上舞台的我仍需要自信與魅力！我的自信是否因為變瘦而來我不知道，但我很確定「我沒辦法將視線移開鏡子裡的我!!」真實的心情！！謝謝你們！！<br><br>
+▌以為這是一場夢<br><br>
+還是常常照鏡子、深怕醒來之後肥肉再度回來，但現在路人甲乙丙根本認不出來我是誰的驚喜感，甚至開始誇獎、稱讚我的勇氣，想想當初怎麼考慮那麼久都不行動呢？辛苦我的身體多壓了那麼重的肥肉這麼久<br><br>
 
-他是個特別的醫生，非常獨特的個人風格<br><br>
+▌減重是一輩子的課題<br><br>
 
-主任的「帥」就不用強調了，專業更是無可挑剔，針對個案的需求，給予「合理的」要求，無論是在營養品的選擇或術後無厘頭的嘴饞壓力，他都給出最好的建議；術前衛教跟術後追蹤都讓我覺得貼心，非常信任的把我的健康交給他
-  ` },
+陳醫生曾跟我說過「不要因為瘦下來嘴巴就不控制，這樣真的只會是夢」，身材體態要維持不是醫生說了算，也不是用「説」的，而是努力實踐，好好的照顧身體；我不後悔自己選擇切胃，我對自己選擇感到驕傲！這是最適合我的減重方式了<br>
+美美的人生，我、來、了
+  `, surgery: true, nosurgery: true, pill: false },
 ]) 
 
 currentCase.value = caseAll.value[0]
@@ -800,7 +812,7 @@ function popup2(item) {
   isPopup2.value = true
 }
 
-const currentCase2 = ref({ name: '', title: '', text: '' })
+const currentCase2 = ref({ name: '', title: '', text: '', surgery: false, nosurgey: false, pill: false })
 
 currentCase2.value = caseAll.value[0]
 
@@ -1123,6 +1135,24 @@ function surgery(item) {
       margin-top: 58px;
       display: flex;
       justify-content: space-between;
+    }
+
+    &-way {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      &-head {
+        margin-right: 18px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+      }
     }
 
     &-title {
@@ -1459,6 +1489,24 @@ function surgery(item) {
 
     &-center {
       margin: 0px 64px;
+    }
+
+    &-way {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      &-head {
+        margin-right: 18px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+      }
     }
 
     &-head {
