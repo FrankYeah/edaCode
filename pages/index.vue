@@ -290,6 +290,11 @@
       </div>
     </div>
 
+    <div class="index-survey">
+      <iframe width="100%" height="600px" src="https://www.surveycake.com/s/q08m8"
+      style="border:#ddd 1px solid;" allowTransparency="true" frameborder="0"></iframe>
+    </div>
+
     <div id="contact" class="index-contact">
       <div class="index-contact-head">聯繫我們</div>
       <div class="index-contact-sub">請透過一下聯繫方式聯繫我們</div>
@@ -311,8 +316,14 @@
     </div>
 
     <div id="location" class="index-location">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6196.054121725691!2d121.73334682234385!3d25.129367810177587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4e14d8d05e2b%3A0x3eaa4af0aa5e0850!2z5Z-66ZqG6LuK56uZ5Y2X56uZ!5e0!3m2!1szh-TW!2stw!4v1688563634912!5m2!1szh-TW!2stw" width="100%" height="692" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.9857089703996!2d120.36178057532615!3d22.765911625857466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e117cfb532485%3A0x4f7179e49e3a5895!2z6auY6ZuE576p5aSn5rib6YeN5Lit5b-D77yN5rib6YeN6IKl6IOW6ZaA6Ki6L-awtOeQgy_lhafoppbpj6HnuK7og4PmiYvooZM!5e0!3m2!1szh-TW!2stw!4v1690773692264!5m2!1szh-TW!2stw" width="100%" height="692" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <!-- <div class="index-location-"></div> -->
+    </div>
+
+    <div class="index-all">
+      <div class="index-all-head">關於我們</div>
+      <div class="index-all-text">只要你願意，專業減重團隊就在高雄燕巢區為你服務</div>
+      <img class="index-all-img" src="~assets/img/group/group.jpeg" alt="">
     </div>
 
     <!-- popup -->
@@ -1478,13 +1489,16 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     
   }
 
+  &-survey {
+    margin: 100px 0px 0px;
+  }
+
   //caontact
 
   &-contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px 0px 0px;
     padding: 108px 0px 80px;
     background: #FBFBFB;
 
@@ -1556,6 +1570,43 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     width: 80%;
     margin: auto;
     padding-bottom: 80px;
+  }
+
+  // all
+
+  &-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px 0px;
+
+    &-head {
+      position: relative;
+      font-size: 40px;
+      line-height: 1.6;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 166px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
+    }
+
+    &-text {
+      margin-top: 8px;
+      color: #888;
+    }
+
+    &-img {
+      width: 80vw;
+      margin: 40px 0px 60px;
+    }
   }
 
   //popup
@@ -2208,10 +2259,15 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     
   }
 
+  // survey
+
+  &-survey {
+    margin: 64px 0px 0px;
+  }
+
   //caontact
 
   &-contact {
-    margin: 64px 0px 0px;
     padding: 76px 0px 80px;
 
 
@@ -2261,6 +2317,33 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
   &-location {
     width: 100%;
     padding-bottom: 90px;
+  }
+
+  // all
+
+  &-all {
+    padding: 10px 0px 0px;
+
+    &-head {
+      font-size: 20px;
+
+      &::before {
+        left: -20px;
+        top: -10px;
+        width: 133px;
+        height: 27px;
+      }
+
+    }
+
+    &-sub {
+      margin-top: 8px;
+    }
+
+    &-img {
+      width: 90vw;
+      margin: 20px 0px 40px;
+    }
   }
 
   //popup
