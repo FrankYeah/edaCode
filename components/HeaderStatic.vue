@@ -4,7 +4,7 @@
     <div class="header-box header-desktop">
       <!-- <img class="" src="~assets/img" alt=""> -->
       <nuxt-link to="/">
-        <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
+        <img class="header-logo" src="~assets/img/logo/logo3.png" alt="">
       </nuxt-link>
       <div class="header-group">
         <div class="header-row">
@@ -36,7 +36,7 @@
     <div class="header-box header-rwd">
       <!-- <img class="" src="~assets/img" alt=""> -->
       <nuxt-link to="/">
-        <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
+        <img class="header-logo" src="~assets/img/logo/logo3.png" alt="">
       </nuxt-link>
       <img @click="isPopup = true" class="header-menu" src="~assets/img/ui/menu.png" alt="">
     </div>
@@ -45,7 +45,7 @@
       <div class="header-inner">
         <div class="header-box2">
           <nuxt-link @click="isPopup = false" to="/">
-            <img class="header-logo" src="~assets/img/logo/logo.png" alt="">
+            <img class="header-logo" src="~assets/img/logo/logo3.png" alt="">
           </nuxt-link>
           <img @click="isPopup = false" class="header-menu" src="~assets/img/ui/close.png" alt="">
         </div>
@@ -100,7 +100,7 @@ export default {
   top: 0px;
   height: 103px;
   width: 100vw;
-  padding: 32px 74px;
+  padding: 6px 74px;
   border-bottom: 1px solid #EFEFEF;
   background-color: white;
   z-index: 2;
@@ -120,7 +120,7 @@ export default {
   }
 
   &-logo {
-    height: 40px;
+    height: 90px;
     cursor: pointer;
 
     &:hover {
@@ -136,6 +136,7 @@ export default {
 
   &-row {
     display: flex;
+    margin-top: 10px;
   }
 
   &-item {
@@ -164,7 +165,7 @@ export default {
 
 .header {
   height: 80px;
-  padding: 28px 28px;
+  padding: 10px 28px;
   z-index: 2;
 
   &-desktop {
@@ -180,7 +181,7 @@ export default {
   }
 
   &-logo {
-    height: 36px;
+    height: 60px;
   }
 
   &-menu {
@@ -202,9 +203,10 @@ export default {
 
   &-box2 {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 80px;
-    padding: 28px 28px;
+    padding: 9px 28px;
     z-index: 2;
   }
 
