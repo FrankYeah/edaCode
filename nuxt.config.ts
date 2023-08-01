@@ -22,7 +22,7 @@ export default defineNuxtConfig({
           { hid: 'og:image' , property: 'og:image' , content: 'logo2.png'},
         ],
         
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/eda/favicon.ico' }]
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
       }
     },
     

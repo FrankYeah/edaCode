@@ -273,7 +273,7 @@
     <div id="service" class="index-service">
       <div class="index-service-row">
         <div class="index-service-left">
-          <div class="index-service-head">減種服務</div>
+          <div class="index-service-head">減重服務</div>
           <div class="index-service-sub">根據您的需要，為您客製化</div>
         </div>
         <div class="index-service-right">
