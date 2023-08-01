@@ -53,11 +53,11 @@
             <div class="index-team-word">「你若有決心，我就有方法」</div>
             <div class="index-team-surgery">
               <div>腹腔鏡減重手術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
             </div>
             <div class="index-team-surgery">
               <div>內視鏡胃袖狀縫合術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/shrink-stomach.png" alt="">
             </div>
             <div @click="popup1('建翰')" class="index-team-more">瞭解更多</div>
           </div>
@@ -70,11 +70,11 @@
             <div class="index-team-word">「給自己一次機會改變！」</div>
             <div class="index-team-surgery">
               <div>腹腔鏡胃繞道手術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/surround.png" alt="">
             </div>
             <div class="index-team-surgery">
               <div>微創胃腸肝膽手術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
             </div>
             <div @click="popup1('忠延')" class="index-team-more">瞭解更多</div>
           </div>
@@ -89,11 +89,11 @@
             <div class="index-team-word">「選擇不一樣的人生與人『身』」</div>
             <div class="index-team-surgery">
               <div>運動處方</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/pill.png" alt="">
             </div>
             <div class="index-team-surgery">
               <div>藥物暨營養內科減重</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/food-control.png" alt="">
             </div>
             <div @click="popup1('昱彰')" class="index-team-more">瞭解更多</div>
           </div>
@@ -106,11 +106,11 @@
             <div class="index-team-word">「真心想，就會事成」</div>
             <div class="index-team-surgery">
               <div>無傷口胃鏡水球術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/water-ball.png" alt="">
             </div>
             <div class="index-team-surgery">
               <div>腹腔鏡微創縮胃術</div>
-              <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+              <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
             </div>
             <div @click="popup1('暐霖')" class="index-team-more">瞭解更多</div>
           </div>
@@ -128,11 +128,11 @@
               <div class="index-team-word">「你若有決心，我就有方法」</div>
               <div class="index-team-surgery">
                 <div>腹腔鏡減重手術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
               </div>
               <div class="index-team-surgery">
                 <div>內視鏡胃袖狀縫合術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
               </div>
             </div>
           </div>
@@ -147,11 +147,11 @@
               <div class="index-team-word">「你若有決心，我就有方法」</div>
               <div class="index-team-surgery">
                 <div>腹腔鏡胃繞道手術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/surround.png" alt="">
               </div>
               <div class="index-team-surgery">
                 <div>微創胃腸肝膽手術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/cut.png" alt="">
               </div>
             </div>
           </div>
@@ -168,11 +168,11 @@
               <div class="index-team-word">「你若有決心，我就有方法」</div>
               <div class="index-team-surgery">
                 <div>運動處方</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/pill.png" alt="">
               </div>
               <div class="index-team-surgery">
                 <div>藥物暨營養內科減重</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/food-control.png" alt="">
               </div>
             </div>
           </div>
@@ -187,11 +187,11 @@
               <div class="index-team-word">「你若有決心，我就有方法」</div>
               <div class="index-team-surgery">
                 <div>無傷口胃鏡水球術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/water-ball.png" alt="">
               </div>
               <div class="index-team-surgery">
                 <div>腹腔鏡微創縮胃術</div>
-                <img class="index-team-surgery-photo" src="~assets/img/ui/surgery1.png" alt="">
+                <img class="index-team-surgery-photo" src="~assets/img/icon/shrink-stomach.png" alt="">
               </div>
             </div>
           </div>
@@ -238,10 +238,19 @@
         <div class="index-case-row3">
           <div>
             <div class="index-case-way">
-              <div class="index-case-way-head">減重方式</div>
-              <img v-if="currentCase.surgery" class="index-case-way-img" src="~assets/img/icon/shrink-stomach.png" alt="img">
-              <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/food-control.png" alt="img">
-              <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill.png" alt="img">
+              <div class="index-case-way-row">
+                <div class="index-case-way-head">減重方式</div>
+                <img v-if="currentCase.surgery" class="index-case-way-img" src="~assets/img/icon/shrink-stomach.png" alt="img">
+                <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/food-control.png" alt="img">
+                <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill.png" alt="img">
+              </div>
+              <div @click="popup1('建翰')" class="index-case-doctor">
+                <div>
+                  <div class="index-case-doctor-text">醫師</div>
+                  <div class="index-case-doctor-name">陳建翰</div>
+                </div>
+                <img class="index-case-doctor-img" src="~assets/img/doctor/001.png" alt="img">
+              </div>
             </div>
             <div class="index-case-title">{{ currentCase.title }}</div>
             <div class="index-case-text" v-html="currentCase.text"></div>
@@ -265,7 +274,7 @@
       <div class="index-service-row">
         <div class="index-service-left">
           <div class="index-service-head">減種服務</div>
-          <div class="index-service-sub">根據需求提供各式減重服務</div>
+          <div class="index-service-sub">根據您的需要，為您客製化</div>
         </div>
         <div class="index-service-right">
           <div class="index-service-box">
@@ -453,7 +462,10 @@
             <div class="index-popup3-text2" v-html="serviceData.content[serviceSelectNum].weakness"></div>
           </div>
 
-          <div v-if="serviceData.content[serviceSelectNum].doctor" class="index-popup3-doctor">
+          <div v-if="serviceData.content[serviceSelectNum].doctor"
+             @click="popup1(serviceData.content[serviceSelectNum].link)"
+            class="index-popup3-doctor"
+          >
             <div>
               <div class="index-popup3-doctor-head">醫師</div>
               <div class="index-popup3-doctor-text">{{ serviceData.content[serviceSelectNum].doctor }}</div>
@@ -471,7 +483,7 @@
 <script setup>
 
 useHead({
-  title: '義大專業的醫療團隊',
+  title: '高雄義大專業的外科減重團隊',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   charset: 'utf-8',
   meta: [
@@ -750,7 +762,7 @@ const caseAll = ref([
 總是依賴侄子照顧<br>
 呼吸器治療費用20萬元<br><br>
 
-▌當我遇見#鄭瑋霖醫師，一切都不一樣了<br><br>
+▌當我遇見#鄭暐霖醫師，一切都不一樣了<br><br>
 
 －12堂的飲食調整，除了學會知識，也對生活更加有感，不再厭世<br>
 －每週一次重訓１小時＋有氧半小時<br>
@@ -852,6 +864,7 @@ const serviceData = ref({
     {
       title: '',
       sub: '',
+      link: '',
       icon: '',
       doctor: '',
       doctorIcon: '',
@@ -884,6 +897,7 @@ const surgeryData = ref({
     {
       title: '袖狀胃切除手術',
       sub: '完成手術後的第一年，病人的體重可能會減少35-40%。',
+      link: '建翰',
       icon: 'img/icon/cut.png',
       doctor: '陳建翰',
       doctorIcon: 'img/doctor/001.png',
@@ -906,6 +920,7 @@ const surgeryData = ref({
     {
       title: '胃繞道手術',
       sub: '完成手術後的第一年，病人的體重可能會減少35-40%。',
+      link: '忠延',
       icon: 'img/icon/surround.png',
       doctor: '陳忠延',
       doctorIcon: 'img/doctor/002.png',
@@ -935,6 +950,7 @@ const nifeData = ref({
     {
       title: '內視鏡縮胃手術',
       sub: '第一年你可以期望減掉 15～20％的體重',
+      link: '建翰',
       icon: 'img/icon/shrink-stomach.png',
       doctor: '陳建翰',
       doctorIcon: 'img/doctor/001.png',
@@ -959,8 +975,9 @@ const nifeData = ref({
     {
       title: '內視鏡胃內水球',
       sub: '胃水球置入六個月後，平均能減少10-15%體重',
+      link: '暐霖',
       icon: 'img/icon/water-ball.png',
-      doctor: '鄭瑋霖',
+      doctor: '鄭暐霖',
       doctorIcon: 'img/doctor/004.png',
       effect: `
       在胃部放一個的水球，藉由水球填充胃部，產生飽食感，以降低食物攝取量的方式來達到減重的效果
@@ -984,6 +1001,7 @@ const pillData = ref({
     {
       title: '羅氏纖｜羅鮮子',
       sub: '一年平均約 -2公斤（52週）',
+      link: '昱彰',
       icon: 'img/icon/pill.png',
       doctor: '陳昱彰',
       doctorIcon: 'img/doctor/003.png',
@@ -997,9 +1015,10 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     {
       title: '善纖達｜瘦瘦筆',
       sub: '一年平均約 -6公斤（52週）',
+      link: '昱彰',
       icon: 'img/icon/pill.png',
-      doctor: '',
-      doctorIcon: '',
+      doctor: '陳昱彰',
+      doctorIcon: 'img/doctor/003.png',
       effect: `
       台灣食藥署目前核准上市，且已通過美國食品藥品監督管理局 (U.S. Food and Drug Administr a tion, FDA) 認可的減重藥物：<br>
 Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone hydrochloride /Bupropion hydrochloride (Contrave康纖芙®)。<br>
@@ -1012,9 +1031,10 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     {
       title: '康纖芙',
       sub: '一年平均約 6~11%（52週）',
+      link: '昱彰',
       icon: 'img/icon/pill.png',
-      doctor: '',
-      doctorIcon: '',
+      doctor: '陳昱彰',
+      doctorIcon: 'img/doctor/003.png',
       effect: `
       台灣食藥署目前核准上市，且已通過美國食品藥品監督管理局 (U.S. Food and Drug Administr a tion, FDA) 認可的減重藥物：<br>
       Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone hydrochloride /Bupropion hydrochloride (Contrave康纖芙®)。<br>
@@ -1027,8 +1047,9 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     {
       title: '12週飲食控制',
       sub: '一年平均約 5~10%',
+      link: '暐霖',
       icon: 'img/icon/food-control.png',
-      doctor: '鄭瑋霖',
+      doctor: '鄭暐霖',
       doctorIcon: 'img/doctor/004.png',
       effect: `
       透過調整飲食的內容、吃飯的次數以及進食的速度，我們可以減少攝取的熱量，進而降低體重。<br>
@@ -1368,8 +1389,14 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
 
     &-way {
       display: flex;
+      justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
+
+      &-row {
+        display: flex;
+        align-items: center;
+      }
 
       &-head {
         margin-right: 12px;
@@ -1381,6 +1408,33 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
         width: 40px;
         height: 40px;
         margin-right: 4px;
+      }
+    }
+
+    &-doctor {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 80px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &-text {
+      
+      }
+
+      &-name {
+        margin-top: 6px;
+      }
+
+      &-img {
+        margin-left: 10px;
+        width: 60px;
+        height: 60px;
       }
     }
 
@@ -1619,7 +1673,7 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     height: 100vh;
     padding-top: 10vh;
     background-color: rgba(black, 0.5);
-    z-index: 2;
+    z-index: 3;
 
     &-outer {
       position: relative;
@@ -1921,20 +1975,25 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
       right: 0px;
       display: flex;
       align-items: center;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &-head {
-        font-size: 10px;
+        
       }
 
       &-text {
         margin-top: 6px;
-        font-weight: 700;
       }
 
       &-icon {
-        margin-left: 30px;
-        width: 40px;
-        height: 40px;
+        margin-left: 20px;
+        width: 80px;
+        height: 80px;
       }
       
     }
@@ -2166,6 +2225,37 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     &-row3 {
       flex-direction: column;
       margin: 40px 24px 0px;
+    }
+
+    &-way {
+
+      &-row {
+
+      }
+
+      &-head {
+
+      }
+
+      &-img {
+
+      }
+    }
+
+    &-doctor {
+      margin-right: 0px;
+
+      &-text {
+      
+      }
+
+      &-name {
+        
+      }
+
+      &-img {
+        
+      }
     }
 
     &-title {
@@ -2530,7 +2620,7 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     }
 
     &-desc {
-      margin-top: 34px;
+      margin-top: 80px;
     }
 
     &-head2 {
@@ -2542,7 +2632,9 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
     }
 
     &-doctor {
-      position: initial;
+      right: auto;
+      left: 0px;
+      top: 60px;
       margin-top: 34px;
       justify-content: space-between;
 
