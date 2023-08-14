@@ -19,7 +19,7 @@
           <div v-show="currentRotate == 2" class="index-main-text">您有任何問題，親切的醫師都在診所為您服務</div>
           <div v-show="currentRotate == 3" class="index-main-text">四位醫師＋個管師＋營養師的全方位照護</div>
           <div v-show="currentRotate == 4" class="index-main-text">全心投入於外科手術減重，帶來更好的效果、降低風險與副作用</div>
-          <div v-show="currentRotate == 5" class="index-main-text">我們給您最舒適的住房體驗</div>
+          <div v-show="currentRotate == 5" class="index-main-text">讓您像入住飯店一樣舒適自在</div>
           <div class="index-main-dot-row">
             <!-- class if -->
             <div :class="['index-main-dot',
@@ -244,13 +244,22 @@
                 <img v-if="currentCase.nosurgery" class="index-case-way-img" src="~assets/img/icon/food-control.png" alt="img">
                 <img v-if="currentCase.pill" class="index-case-way-img" src="~assets/img/icon/pill.png" alt="img">
               </div>
-              <div @click="popup1('建翰')" class="index-case-doctor">
+
+              <div v-if="currentCase.name == '呼吸中止'" @click="popup1('暐霖')" class="index-case-doctor">
+                <div>
+                  <div class="index-case-doctor-text">醫師</div>
+                  <div class="index-case-doctor-name">鄭暐霖</div>
+                </div>
+                <img class="index-case-doctor-img" src="~assets/img/doctor/004.png" alt="img">
+              </div>
+              <div v-else @click="popup1('建翰')" class="index-case-doctor">
                 <div>
                   <div class="index-case-doctor-text">醫師</div>
                   <div class="index-case-doctor-name">陳建翰</div>
                 </div>
                 <img class="index-case-doctor-img" src="~assets/img/doctor/001.png" alt="img">
               </div>
+
             </div>
             <div class="index-case-title">{{ currentCase.title }}</div>
             <div class="index-case-text" v-html="currentCase.text"></div>
@@ -957,14 +966,12 @@ const nifeData = ref({
       effect: `術後你可以在1-2天之內恢復正常生活。與其他更為侵入性的減重手術相比，風險較低`,
       trait: `
       １低飢餓感不易復胖<br>
-      ２短期及長期減重效果與胃繞道相當，減重效果比束帶佳<br>
-      ３傷口極小、疼痛度低、住院天數短<br>
-      ４腹腔鏡手術單切口，幾乎看不到傷口<br>
-      ５安全性較高、後遺症較低<br>
-      ６日後仍可進行胃鏡檢查<br>
-      ７不改變腸道吸收，較少營養吸收問題<br>
-      ８無異物植入問題<br>
-      ９無腸胃吻合，腸道接口潰瘍發生率更低
+      ２短期20%體重, 及長期15%體重, 減重效果佳！<br>
+      ３無傷口、疼痛度低<br>
+      ４安全性較高、後遺症較低<br>
+      ５日後仍可進行胃鏡檢查<br>
+      ６無腸胃切除或吻合, 不改變腸道吸收，較少營養吸收問題<br>
+      ７無異物植入問題
       `,
       weakness: `
       健保不給付, 需要評估商業保險是否給付
