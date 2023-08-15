@@ -268,11 +268,11 @@
           <img v-if="currentCase.name == '不孕症'" class="index-case-photo" src="~assets/img/case/2pregnant.jpg" alt="">
           <img v-if="currentCase.name == '心肌梗塞'" class="index-case-photo" src="~assets/img/case/3heart.jpg" alt="">
           <img v-if="currentCase.name == '衣服選擇障礙'" class="index-case-photo" src="~assets/img/case/4clothe.jpg" alt="">
-          <img v-if="currentCase.name == '身形改變'" class="index-case-photo" src="~assets/img/case/5body.jpg" alt="">
+          <img v-if="currentCase.name == '身形改變'" class="index-case-photo" src="~assets/img/case/5body.png" alt="">
           <img v-if="currentCase.name == '肝指數異常'" class="index-case-photo" src="~assets/img/case/6liver.png" alt="">
           <img v-if="currentCase.name == '容貌焦慮'" class="index-case-photo" src="~assets/img/case/7face.jpg" alt="">
-          <img v-if="currentCase.name == '缺乏自信'" class="index-case-photo" src="~assets/img/case/8confident.jpg" alt="">
-          <img v-if="currentCase.name == '呼吸中止'" class="index-case-photo" src="~assets/img/case/9press.jpg" alt="">
+          <img v-if="currentCase.name == '缺乏自信'" class="index-case-photo" src="~assets/img/case/8confident.png" alt="">
+          <img v-if="currentCase.name == '呼吸中止'" class="index-case-photo" src="~assets/img/case/9press.png" alt="">
           <img v-if="currentCase.name == '高血壓、自體免疫系統'" class="index-case-photo" src="~assets/img/case/10sleep.png" alt="">
           <img v-if="currentCase.name == '關節疼痛與壓迫'" class="index-case-photo" src="~assets/img/case/11press.jpg" alt="">
         </div>
@@ -309,6 +309,9 @@
     </div>
 
     <div class="index-survey">
+      <div class="index-survey-head">立即填寫表單！</div>
+      <div class="index-survey-sub">預約免費一對一諮詢</div>
+
       <iframe width="100%" height="600px" src="https://www.surveycake.com/s/q08m8"
       style="border:#ddd 1px solid;" allowTransparency="true" frameborder="0"></iframe>
     </div>
@@ -419,11 +422,11 @@
           <img v-if="currentCase2.name == '不孕症'" class="index-popup2-photo" src="~assets/img/case/2pregnant.jpg" alt="">
           <img v-if="currentCase2.name == '心肌梗塞'" class="index-popup2-photo" src="~assets/img/case/3heart.jpg" alt="">
           <img v-if="currentCase2.name == '衣服選擇障礙'" class="index-popup2-photo" src="~assets/img/case/4clothe.jpg" alt="">
-          <img v-if="currentCase2.name == '身形改變'" class="index-popup2-photo" src="~assets/img/case/5body.jpg" alt="">
+          <img v-if="currentCase2.name == '身形改變'" class="index-popup2-photo" src="~assets/img/case/5body.png" alt="">
           <img v-if="currentCase2.name == '肝指數異常'" class="index-popup2-photo" src="~assets/img/case/6liver.png" alt="">
           <img v-if="currentCase2.name == '容貌焦慮'" class="index-popup2-photo" src="~assets/img/case/7face.jpg" alt="">
-          <img v-if="currentCase2.name == '缺乏自信'" class="index-popup2-photo" src="~assets/img/case/8confident.jpg" alt="">
-          <img v-if="currentCase2.name == '呼吸中止'" class="index-popup2-photo" src="~assets/img/case/9press.jpg" alt="">
+          <img v-if="currentCase2.name == '缺乏自信'" class="index-popup2-photo" src="~assets/img/case/8confident.png" alt="">
+          <img v-if="currentCase2.name == '呼吸中止'" class="index-popup2-photo" src="~assets/img/case/9press.png" alt="">
           <img v-if="currentCase2.name == '高血壓、自體免疫系統'" class="index-popup2-photo" src="~assets/img/case/10sleep.png" alt="">
           <img v-if="currentCase2.name == '關節疼痛與壓迫'" class="index-popup2-photo" src="~assets/img/case/11press.jpg" alt="">
 
@@ -1552,6 +1555,30 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
 
   &-survey {
     margin: 100px 0px 0px;
+
+    &-head {
+      position: relative;
+      font-size: 40px;
+      text-align: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: calc(50% - 140px);
+        top: -10px;
+        width: 228px;
+        height: 40px;
+        background-color: #FFE782;
+        z-index: -1;
+      }
+
+    }
+
+    &-sub {
+      margin: 10px 0px 32px;
+      text-align: center;
+      color: #888;
+    }
   }
 
   //caontact
@@ -2360,6 +2387,22 @@ Orlistat(XENICAL羅鮮子®),  Liraglutide(Saxenda善纖達®)以及Naltrexone h
 
   &-survey {
     margin: 64px 0px 0px;
+
+    &-head {
+      font-size: 20px;
+
+      &::before {
+        left: calc(50% - 66px);
+        top: -10px;
+        width: 133px;
+        height: 27px;
+      }
+
+    }
+
+    &-sub {
+      margin: 8px 0px 30px;
+    }
   }
 
   //caontact
