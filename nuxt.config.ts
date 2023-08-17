@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       "@/assets/css/font.css"
      ],
     app: {
-      baseURL: '/eda/',
+      // baseURL: '/eda/',
       head: {
         title: '高雄義大專業的外科減重團隊',
         meta: [
